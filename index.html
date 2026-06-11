@@ -103,6 +103,8 @@
       color: var(--black);
       -webkit-font-smoothing: antialiased;
       position: relative;
+      overflow-x: hidden;
+      width: 100%;
     }
 
     /* ── ACESSIBILIDADE ── */
@@ -791,7 +793,7 @@
       position: fixed;
       bottom: 100px;
       right: 1.5rem;
-      z-index: 90;
+      z-index: 400;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -830,7 +832,7 @@
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
-      z-index: 95;
+      z-index: 450;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -946,13 +948,21 @@
 
     /* ── LGPD MODAL ── */
     #lgpd {
-      position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
-      max-width: 460px; z-index: 200;
+      position: fixed; bottom: 1.5rem; left: 1.5rem;
+      width: calc(100% - 3rem); max-width: 460px; z-index: 500;
       background: var(--black); color: #ccc;
-      border: 1px solid var(--border);
+      border: 1px solid rgba(255,255,255,.15);
       border-radius: var(--radius); padding: 1.5rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      box-shadow: 0 8px 32px rgba(0,0,0,.6);
       display: none;
+    }
+    @media (max-width: 600px) {
+      #lgpd {
+        left: .75rem; right: .75rem;
+        width: calc(100% - 1.5rem);
+        bottom: .75rem;
+        padding: 1.2rem;
+      }
     }
     #lgpd h4 { color: #fff; font-size: 1rem; margin-bottom: .5rem; }
     #lgpd p  { font-size: .83rem; line-height: 1.6; margin-bottom: 1rem; }
@@ -984,6 +994,7 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1.5fr;
       gap: 3rem;
+      width: 100%;
     }
     .footer-col h4 {
       font-family: 'Fraunces', serif;
@@ -1056,42 +1067,132 @@
     .footer-bottom a:hover { color: var(--gold); }
 
     /* ── RESPONSIVO ── */
-    @media (max-width: 900px) {
-      #inicio, #sobre {
-        grid-template-columns: 1fr;
-        padding: 6rem 2rem 3rem;
+
+    /* Evita scroll lateral em qualquer tela */
+    html, body { overflow-x: hidden; max-width: 100%; }
+
+    /* NAV: esconde botão agendar no mobile, mostra hamburger */
+    @media (max-width: 768px) {
+      .nav-cta { display: none; }
+      /* No menu aberto, mostra o botão agendar dentro */
+      .nav-links.open .nav-cta-mobile {
+        display: inline-block !important;
       }
-      #contato { padding: 4rem 2rem; }
+    }
+
+    /* ── TABLET (≤ 900px) ── */
+    @media (max-width: 900px) {
+
+      /* HERO: coluna única, texto centralizado */
+      #inicio {
+        grid-template-columns: 1fr;
+        padding: 6rem 1.5rem 3rem;
+        text-align: center;
+      }
+      .hero-text { max-width: 100%; }
+      .hero-sub { max-width: 100%; }
+      .hero-actions { justify-content: center; }
+      .hero-social-proof { justify-content: center; }
+      .hero-visual { display: none; } /* oculta visual circular no mobile */
+      .hero-scroll-hint { display: none; }
+
+      /* SOBRE: coluna única */
+      #sobre {
+        grid-template-columns: 1fr;
+        padding: 3.5rem 1.5rem;
+      }
+      .sobre-text { text-align: center; }
+      .sobre-text .section-eyebrow { text-align: center; }
+      .sobre-stats { justify-items: center; }
+      .sobre-visual { display: none; } /* carrossel local sem imagens → oculta */
+
+      /* Seções com padding reduzido e sem overflow */
+      #servicos  { padding: 3rem 1.5rem; }
+      #faq       { padding: 3rem 1.5rem; }
+      #depoimentos { padding: 3rem 1.5rem; }
+      #cta       { padding: 3rem 1.5rem; }
+      #contato   { padding: 3rem 1.5rem; }
+      #parceiro  { padding: 3rem 1.5rem; flex-direction: column; }
+
+      /* Textos centralizados, parágrafos justificados */
+      .section-header { text-align: center; }
+      .section-title  { text-align: center; }
+      .section-eyebrow { text-align: center; display: block; }
+      p, .sobre-body, .service-card p, .review-text,
+      .contato-info-card p, .parceiro-content p {
+        text-align: justify;
+      }
+      h1, h2, h3, .hero-title, .sobre-title,
+      .contato-title, .parceiro-content h2 {
+        text-align: center;
+      }
+
+      /* Grids de serviços e depoimentos: 2 colunas */
+      .services-grid   { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .reviews-grid    { grid-template-columns: 1fr; }
+
+      /* Contato: unidades em coluna única */
       .units-grid {
         grid-template-columns: 1fr;
-        max-width: 500px;
-        margin-left: auto; margin-right: auto;
+        max-width: 100%;
       }
-      .contato-extra {
-        grid-template-columns: 1fr;
-        max-width: 500px;
-        margin-left: auto; margin-right: auto;
+      .contato-extra { grid-template-columns: 1fr; }
+
+      /* Footer: stack em coluna */
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
       }
-      .hero-badge-wrap { width: 300px; height: 300px; }
-      .hero-circle { width: 280px; height: 280px; }
-      .card-anos { bottom: 12px; left: 0; }
-      .card-nota { top: 12px; right: 0; }
-      #servicos, #depoimentos, #faq, #cta { padding: 3.5rem 2rem; }
-      .services-grid {
-        grid-template-columns: repeat(2, 1fr);
+      footer { padding: 3rem 1.5rem 2rem; }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: .4rem;
+        text-align: left;
       }
-      footer { padding: 3rem 2rem 2rem; }
-      #whatsapp-float { bottom: 1rem; right: 1rem; }
-      #back-to-top { bottom: 80px; right: 1rem; }
+
+      /* Floats: posição segura */
+      #whatsapp-float  { bottom: 1rem; right: 1rem; }
+      #back-to-top     { bottom: 80px; right: 1rem; }
     }
+
+    /* ── MOBILE (≤ 600px) ── */
     @media (max-width: 600px) {
-      nav { padding: .8rem 1.2rem; }
-      .nav-logo img { height: 50px; } /* Ajuste fino para telas pequenas */
-      .stat-box .num { font-size: 1.7rem; }
-      #whatsapp-modal { width: 260px; }
-      .services-grid {
-        grid-template-columns: 1fr;
+      nav { padding: .7rem 1rem; }
+      .nav-logo img { height: 48px; }
+
+      #inicio { padding: 5.5rem 1rem 2.5rem; }
+      .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
+
+      #sobre, #servicos, #faq, #depoimentos,
+      #cta, #contato, #parceiro {
+        padding: 2.5rem 1rem;
       }
+
+      /* Serviços: 1 coluna */
+      .services-grid { grid-template-columns: 1fr; gap: .8rem; }
+
+      /* Stats: 2 colunas mantidas */
+      .sobre-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
+      .stat-box .num { font-size: 1.6rem; }
+
+      /* WhatsApp modal menor */
+      #whatsapp-modal { width: calc(100vw - 2rem); max-width: 300px; }
+
+      /* Footer: 1 coluna */
+      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+      footer { padding: 2.5rem 1rem 1.5rem; }
+
+      /* CTA final: botões em coluna */
+      .cta-actions { flex-direction: column; align-items: center; }
+      .btn-dark, .btn-ghost { width: 100%; max-width: 320px; text-align: center; }
+
+      /* FAQ: padding interno */
+      .faq-item { padding: 1rem; }
+
+      /* Floats bem posicionados */
+      #whatsapp-float  { bottom: .8rem; right: .8rem; }
+      #back-to-top     { bottom: 72px; right: .8rem; width: 40px; height: 40px; }
     }
   </style>
 </head>
@@ -1114,6 +1215,12 @@
       <li><a href="#depoimentos">Avaliações</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contato">Contato</a></li>
+      <li class="nav-cta-mobile" style="display:none;">
+        <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." 
+           class="btn-primary" style="display:block;text-align:center;font-size:.85rem;padding:.7rem 1.2rem;">
+          Agendar pelo WhatsApp
+        </a>
+      </li>
     </ul>
     <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="nav-cta" aria-label="Agendar via WhatsApp">Agendar</a>
     <button class="hamburger" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false" id="hamburger-btn">
@@ -1578,7 +1685,9 @@
     // ── Back to Top ──
     const backToTopBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 600) backToTopBtn.classList.add('visible');
+      // Aparece após 40% da altura da página ou quando perto do footer
+      const threshold = Math.min(600, document.body.scrollHeight * 0.3);
+      if (window.scrollY > threshold) backToTopBtn.classList.add('visible');
       else backToTopBtn.classList.remove('visible');
     }, { passive: true });
     backToTopBtn.addEventListener('click', () => {
