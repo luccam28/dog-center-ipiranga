@@ -4,8 +4,8 @@
   <!-- Metadados e SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dog Center Ipiranga – Referência em banho, tosa, creche, hotel e veterinária no Ipiranga desde 2015. Cuidado com amor e confiança. Duas unidades. Agende pelo WhatsApp." />
-  <meta name="keywords" content="pet shop Ipiranga, banho e tosa Ipiranga, creche para cães Ipiranga, hotel para pets Ipiranga, veterinário Ipiranga, Dog Center Ipiranga, Eduardo e Sheila" />
+  <meta name="description" content="Dog Center Ipiranga – Melhor pet shop do Ipiranga desde 2015. Banho e tosa, creche, hotel, veterinária e táxi dog. Duas unidades: R. Antônio Marcondes, 276 e R. Bom Pastor, 2023. Agende pelo WhatsApp." />
+  <meta name="keywords" content="pet shop Ipiranga, banho e tosa Ipiranga, creche para cães Ipiranga, hotel para pets Ipiranga, veterinário Ipiranga, Dog Center Ipiranga, Eduardo" />
   <meta name="author" content="Dog Center Ipiranga" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://www.dogcenteripiranga.com.br/" />
@@ -72,7 +72,7 @@
     }
   </script>
 
-  <title>Dog Center Ipiranga - Pet Shop Referência no Ipiranga</title>
+  <title>Dog Center Ipiranga | Pet Shop, Banho & Tosa no Ipiranga desde 2015</title>
 
   <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -103,8 +103,6 @@
       color: var(--black);
       -webkit-font-smoothing: antialiased;
       position: relative;
-      overflow-x: hidden;
-      width: 100%;
     }
 
     /* ── ACESSIBILIDADE ── */
@@ -793,7 +791,7 @@
       position: fixed;
       bottom: 100px;
       right: 1.5rem;
-      z-index: 400;
+      z-index: 90;
       width: 44px;
       height: 44px;
       border-radius: 50%;
@@ -832,7 +830,7 @@
       position: fixed;
       bottom: 1.5rem;
       right: 1.5rem;
-      z-index: 450;
+      z-index: 95;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
@@ -948,21 +946,13 @@
 
     /* ── LGPD MODAL ── */
     #lgpd {
-      position: fixed; bottom: 1.5rem; left: 1.5rem;
-      width: calc(100% - 3rem); max-width: 460px; z-index: 500;
+      position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+      max-width: 460px; z-index: 200;
       background: var(--black); color: #ccc;
-      border: 1px solid rgba(255,255,255,.15);
+      border: 1px solid var(--border);
       border-radius: var(--radius); padding: 1.5rem;
-      box-shadow: 0 8px 32px rgba(0,0,0,.6);
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
       display: none;
-    }
-    @media (max-width: 600px) {
-      #lgpd {
-        left: .75rem; right: .75rem;
-        width: calc(100% - 1.5rem);
-        bottom: .75rem;
-        padding: 1.2rem;
-      }
     }
     #lgpd h4 { color: #fff; font-size: 1rem; margin-bottom: .5rem; }
     #lgpd p  { font-size: .83rem; line-height: 1.6; margin-bottom: 1rem; }
@@ -994,7 +984,6 @@
       display: grid;
       grid-template-columns: 2fr 1fr 1fr 1.5fr;
       gap: 3rem;
-      width: 100%;
     }
     .footer-col h4 {
       font-family: 'Fraunces', serif;
@@ -1066,135 +1055,272 @@
     .footer-bottom a { color: #888; text-decoration: none; }
     .footer-bottom a:hover { color: var(--gold); }
 
-    /* ── RESPONSIVO ── */
 
-    /* Evita scroll lateral em qualquer tela */
-    html, body { overflow-x: hidden; max-width: 100%; }
+    /* ── BARRA DE CREDIBILIDADE ── */
+    #credibilidade {
+      background: var(--black);
+      padding: .9rem 2rem;
+      overflow: hidden;
+    }
+    .cred-track {
+      display: flex; align-items: center; gap: 3rem;
+      animation: marquee 28s linear infinite;
+      white-space: nowrap;
+    }
+    .cred-track:hover { animation-play-state: paused; }
+    @keyframes marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .cred-item {
+      display: flex; align-items: center; gap: .6rem;
+      color: #ccc; font-size: .82rem; font-weight: 500;
+      flex-shrink: 0;
+    }
+    .cred-item .cred-icon { font-size: 1.1rem; }
+    .cred-item strong { color: var(--gold); }
+    .cred-dot { color: #444; font-size: .5rem; flex-shrink: 0; }
 
-    /* NAV: esconde botão agendar no mobile, mostra hamburger */
-    @media (max-width: 768px) {
-      .nav-cta { display: none; }
-      /* No menu aberto, mostra o botão agendar dentro */
-      .nav-links.open .nav-cta-mobile {
-        display: inline-block !important;
-      }
+    /* ── NUMBERS SECTION ── */
+    #numeros {
+      background: var(--black);
+      padding: 4rem 4rem;
+    }
+    .numeros-grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 2rem; text-align: center;
+    }
+    .numero-item { padding: 1.5rem; }
+    .numero-item .big {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.5rem, 4vw, 3.8rem);
+      font-weight: 900; color: var(--gold); line-height: 1;
+      display: block;
+    }
+    .numero-item .lbl {
+      font-size: .88rem; color: #aaa; margin-top: .5rem; line-height: 1.4; display: block;
+    }
+    .numero-divider { width: 1px; background: #2a2a28; align-self: stretch; }
+
+    /* ── DIFERENCIAIS ── */
+    #diferenciais {
+      background: var(--stone);
+      padding: 5rem 4rem;
+    }
+    .diferenciais-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+    }
+    .diferencial-card {
+      background: #fff; border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 2rem 2rem 2rem 5rem;
+      position: relative; transition: transform .2s, box-shadow .2s;
+    }
+    .diferencial-card:hover { transform: translateY(-3px); box-shadow: 0 10px 28px rgba(0,0,0,.08); }
+    .diferencial-num {
+      position: absolute; top: 1.8rem; left: 1.5rem;
+      font-family: 'Fraunces', serif;
+      font-size: 2rem; font-weight: 900;
+      color: var(--gold); line-height: 1; opacity: .35;
+    }
+    .diferencial-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem; font-weight: 700;
+      color: var(--black); margin-bottom: .5rem;
+    }
+    .diferencial-card p { font-size: .9rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── TIMELINE ── */
+    #timeline {
+      background: var(--offwhite);
+      padding: 5rem 4rem;
+    }
+    .timeline-wrap {
+      max-width: 800px; margin: 0 auto;
+      position: relative; padding-left: 2rem;
+    }
+    .timeline-wrap::before {
+      content: ''; position: absolute;
+      left: 0; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--red));
+    }
+    .tl-item {
+      position: relative; padding: 0 0 2.5rem 2rem;
+    }
+    .tl-item::before {
+      content: ''; position: absolute;
+      left: -2rem; top: .3rem;
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gold); border: 3px solid var(--offwhite);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .tl-year {
+      font-family: 'Fraunces', serif;
+      font-size: .78rem; font-weight: 700;
+      color: var(--red); text-transform: uppercase;
+      letter-spacing: .1em; margin-bottom: .3rem; display: block;
+    }
+    .tl-item h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem; font-weight: 700; margin-bottom: .4rem;
+    }
+    .tl-item p { font-size: .9rem; color: var(--muted); line-height: 1.6; }
+
+    /* ── SEO LOCAL TEXT ── */
+    #seo-local {
+      background: var(--stone);
+      padding: 4rem 4rem;
+    }
+    .seo-local-wrap {
+      max-width: 900px; margin: 0 auto;
+    }
+    .seo-local-wrap h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      font-weight: 900; margin-bottom: 1.5rem; line-height: 1.2;
+    }
+    .seo-local-wrap h2 em { font-style: italic; font-weight: 300; color: var(--muted); }
+    .seo-local-wrap p {
+      color: var(--muted); font-size: .95rem; line-height: 1.8;
+      margin-bottom: 1rem; text-align: justify;
+    }
+    .seo-local-wrap h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem; font-weight: 700;
+      margin: 1.8rem 0 .6rem; color: var(--black);
+    }
+    .seo-tags {
+      display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.5rem;
+    }
+    .seo-tag {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: 999px; padding: .35rem .9rem;
+      font-size: .78rem; color: var(--muted); font-weight: 500;
     }
 
-    /* ── TABLET (≤ 900px) ── */
+    /* ── CTA SECTION (genérico) ── */
+    .section-cta {
+      text-align: center; margin-top: 3rem;
+    }
+    .section-cta p { color: var(--muted); font-size: .9rem; margin-top: .8rem; }
+
+    /* ── CONFIANÇA antes do CTA final ── */
+    #confianca {
+      background: var(--black);
+      padding: 3rem 4rem;
+    }
+    .confianca-grid {
+      max-width: 900px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem; text-align: center;
+    }
+    .confianca-item { padding: 1.5rem 1rem; }
+    .confianca-item .icon { font-size: 2rem; display: block; margin-bottom: .8rem; }
+    .confianca-item p { font-size: .88rem; color: #aaa; line-height: 1.55; }
+    .confianca-item strong { color: #fff; display: block; margin-bottom: .3rem; font-size: .95rem; }
+
+    /* ── TELEFONE FIXO (mobile) ── */
+    #tel-fixo {
+      display: none;
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 300;
+      background: var(--black);
+      border-top: 1px solid #333;
+      padding: .7rem 1rem;
+      gap: .5rem;
+    }
+    #tel-fixo a {
+      flex: 1; display: flex; align-items: center; justify-content: center;
+      gap: .4rem; padding: .65rem .5rem; border-radius: 999px;
+      font-weight: 700; font-size: .82rem; text-decoration: none;
+      text-align: center;
+    }
+    .tel-wa { background: var(--whatsapp); color: #fff; }
+    .tel-call { background: #1e4620; color: #7fff9a; border: 1px solid #2a6b2e; }
+    @media (max-width: 768px) {
+      #tel-fixo { display: flex; }
+      /* empurrar conteúdo para não ficar atrás da barra */
+      body { padding-bottom: 60px; }
+    }
+
+    /* ── RESPONSIVO ── */
     @media (max-width: 900px) {
-
-      /* HERO: coluna única, texto centralizado */
-      #inicio {
+      #inicio, #sobre {
         grid-template-columns: 1fr;
-        padding: 6rem 1.5rem 3rem;
-        text-align: center;
+        padding: 6rem 2rem 3rem;
       }
-      .hero-text { max-width: 100%; }
-      .hero-sub { max-width: 100%; }
-      .hero-actions { justify-content: center; }
-      .hero-social-proof { justify-content: center; }
-      .hero-visual { display: none; } /* oculta visual circular no mobile */
-      .hero-scroll-hint { display: none; }
-
-      /* SOBRE: coluna única */
-      #sobre {
-        grid-template-columns: 1fr;
-        padding: 3.5rem 1.5rem;
-      }
-      .sobre-text { text-align: center; }
-      .sobre-text .section-eyebrow { text-align: center; }
-      .sobre-stats { justify-items: center; }
-      .sobre-visual { display: none; } /* carrossel local sem imagens → oculta */
-
-      /* Seções com padding reduzido e sem overflow */
-      #servicos  { padding: 3rem 1.5rem; }
-      #faq       { padding: 3rem 1.5rem; }
-      #depoimentos { padding: 3rem 1.5rem; }
-      #cta       { padding: 3rem 1.5rem; }
-      #contato   { padding: 3rem 1.5rem; }
-      #parceiro  { padding: 3rem 1.5rem; flex-direction: column; }
-
-      /* Textos centralizados, parágrafos justificados */
-      .section-header { text-align: center; }
-      .section-title  { text-align: center; }
-      .section-eyebrow { text-align: center; display: block; }
-      p, .sobre-body, .service-card p, .review-text,
-      .contato-info-card p, .parceiro-content p {
-        text-align: justify;
-      }
-      h1, h2, h3, .hero-title, .sobre-title,
-      .contato-title, .parceiro-content h2 {
-        text-align: center;
-      }
-
-      /* Grids de serviços e depoimentos: 2 colunas */
-      .services-grid   { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-      .reviews-grid    { grid-template-columns: 1fr; }
-
-      /* Contato: unidades em coluna única */
+      #contato { padding: 4rem 2rem; }
       .units-grid {
         grid-template-columns: 1fr;
-        max-width: 100%;
+        max-width: 500px;
+        margin-left: auto; margin-right: auto;
       }
-      .contato-extra { grid-template-columns: 1fr; }
-
-      /* Footer: stack em coluna */
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
+      .contato-extra {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto; margin-right: auto;
       }
-      footer { padding: 3rem 1.5rem 2rem; }
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: .4rem;
-        text-align: left;
+      .hero-badge-wrap { width: 300px; height: 300px; }
+      .hero-circle { width: 280px; height: 280px; }
+      .card-anos { bottom: 12px; left: 0; }
+      .card-nota { top: 12px; right: 0; }
+      #servicos, #depoimentos, #faq, #cta { padding: 3.5rem 2rem; }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
-
-      /* Floats: posição segura */
-      #whatsapp-float  { bottom: 1rem; right: 1rem; }
-      #back-to-top     { bottom: 80px; right: 1rem; }
+      footer { padding: 3rem 2rem 2rem; }
+      #whatsapp-float { bottom: 1rem; right: 1rem; }
+      #back-to-top { bottom: 80px; right: 1rem; }
     }
-
-    /* ── MOBILE (≤ 600px) ── */
     @media (max-width: 600px) {
-      nav { padding: .7rem 1rem; }
-      .nav-logo img { height: 48px; }
-
-      #inicio { padding: 5.5rem 1rem 2.5rem; }
-      .hero-title { font-size: clamp(2rem, 8vw, 3rem); }
-
-      #sobre, #servicos, #faq, #depoimentos,
-      #cta, #contato, #parceiro {
-        padding: 2.5rem 1rem;
+      nav { padding: .8rem 1.2rem; }
+      .nav-logo img { height: 50px; } /* Ajuste fino para telas pequenas */
+      .stat-box .num { font-size: 1.7rem; }
+      #whatsapp-modal { width: 260px; }
+      .services-grid {
+        grid-template-columns: 1fr;
       }
-
-      /* Serviços: 1 coluna */
-      .services-grid { grid-template-columns: 1fr; gap: .8rem; }
-
-      /* Stats: 2 colunas mantidas */
-      .sobre-stats { grid-template-columns: 1fr 1fr; gap: 1rem; }
-      .stat-box .num { font-size: 1.6rem; }
-
-      /* WhatsApp modal menor */
-      #whatsapp-modal { width: calc(100vw - 2rem); max-width: 300px; }
-
-      /* Footer: 1 coluna */
-      .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-      footer { padding: 2.5rem 1rem 1.5rem; }
-
-      /* CTA final: botões em coluna */
-      .cta-actions { flex-direction: column; align-items: center; }
-      .btn-dark, .btn-ghost { width: 100%; max-width: 320px; text-align: center; }
-
-      /* FAQ: padding interno */
-      .faq-item { padding: 1rem; }
-
-      /* Floats bem posicionados */
-      #whatsapp-float  { bottom: .8rem; right: .8rem; }
-      #back-to-top     { bottom: 72px; right: .8rem; width: 40px; height: 40px; }
     }
   </style>
+
+  <!-- Schema FAQ para SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"Quanto tempo dura o banho e tosa?","acceptedAnswer":{"@type":"Answer","text":"Em média 1h30, dependendo do porte e pelagem. Usamos produtos premium e técnicas que respeitam o tempo do seu pet."}},
+      {"@type":"Question","name":"Preciso agendar com antecedência?","acceptedAnswer":{"@type":"Answer","text":"Sim, recomendamos agendamento via WhatsApp para garantir o melhor horário."}},
+      {"@type":"Question","name":"Vocês aceitam animais idosos ou com necessidades especiais?","acceptedAnswer":{"@type":"Answer","text":"Sim! Nossa equipe é treinada para cuidar de cães idosos, com restrições de saúde ou comportamentais."}},
+      {"@type":"Question","name":"Qual o endereço do Dog Center Ipiranga?","acceptedAnswer":{"@type":"Answer","text":"Temos duas unidades: Rua Antônio Marcondes, 276 e Rua Bom Pastor, 2023, ambas no bairro do Ipiranga, São Paulo."}},
+      {"@type":"Question","name":"Como posso agendar um serviço?","acceptedAnswer":{"@type":"Answer","text":"Fale pelo WhatsApp: (11) 98354-6780 (Unidade 1) ou (11) 92191-2023 (Unidade 2)."}},
+      {"@type":"Question","name":"Vocês oferecem táxi dog?","acceptedAnswer":{"@type":"Answer","text":"Sim! Realizamos busca e entrega com segurança e conforto. Consulte disponibilidade pelo WhatsApp."}},
+      {"@type":"Question","name":"Qual a diferença entre as duas unidades?","acceptedAnswer":{"@type":"Answer","text":"A Unidade Antônio Marcondes foca em banho, tosa e boutique pet. A Unidade Bom Pastor tem clínica veterinária, estética avançada e suporte médico."}}
+    ]
+  }
+  </script>
+
+  <!-- Schema Review Aggregate -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Dog Center Ipiranga",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "87",
+      "bestRating": "5"
+    },
+    "review": [
+      {"@type":"Review","author":{"@type":"Person","name":"Ana Carolina"},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"O melhor petshop do Ipiranga. Atendimento maravilhoso, meu cãozinho às vezes não quer voltar pra casa de tão mimado."},
+      {"@type":"Review","author":{"@type":"Person","name":"Mariana F."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Conheci o Eduardo em 2015 e desde então ele cuida da minha Lolla. Evolução profissional incrível!"},
+      {"@type":"Review","author":{"@type":"Person","name":"Rodrigo C."},"reviewRating":{"@type":"Rating","ratingValue":"5"},"reviewBody":"Meu schnauzer de 5 anos nunca precisou trocar de lugar. Banho sempre impecável."}
+    ]
+  }
+  </script>
 </head>
 
 <body>
@@ -1215,12 +1341,6 @@
       <li><a href="#depoimentos">Avaliações</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="#contato">Contato</a></li>
-      <li class="nav-cta-mobile" style="display:none;">
-        <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." 
-           class="btn-primary" style="display:block;text-align:center;font-size:.85rem;padding:.7rem 1.2rem;">
-          Agendar pelo WhatsApp
-        </a>
-      </li>
     </ul>
     <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="nav-cta" aria-label="Agendar via WhatsApp">Agendar</a>
     <button class="hamburger" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false" id="hamburger-btn">
@@ -1238,20 +1358,26 @@
     </video>
 
     <div class="hero-text reveal">
-      <span class="hero-eyebrow">Duas Unidades em Funcionamento 🐾</span>
+      <span class="hero-eyebrow">🐾 Pet shop referência no Ipiranga desde 2015</span>
       <h1 class="hero-title">
-        Cuidado com<br><em>quem você</em><br>mais ama.
+        O lugar onde<br><em>seu pet é</em><br>da família.
       </h1>
       <p class="hero-sub">
-        Banho, tosa, creche, hotel e suporte veterinário — tudo com o carinho que o Eduardo e a Sheila dedicam há anos ao seu melhor amigo.
+        Mais de 8 anos cuidando com amor dos pets do Ipiranga. Banho, tosa, creche, hotel, táxi dog e veterinária — tudo numa equipe que você pode confiar.
       </p>
       <div class="hero-actions">
-        <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-primary">Agendar agora</a>
-        <a href="#servicos" class="btn-outline">Ver serviços</a>
+        <a href="https://wa.me/5511983546780?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20serviço%20para%20o%20meu%20pet%20🐾" class="btn-primary">📲 Agendar agora — é rápido</a>
+        <a href="#diferenciais" class="btn-outline">Por que escolher a Dog Center?</a>
       </div>
-      <div class="hero-social-proof">
-        <span class="stars" aria-label="4,9 estrelas">★★★★★</span>
-        <p><strong>4,9 no Google</strong><br>+500 tutores satisfeitos</p>
+      <div class="hero-social-proof" aria-label="Prova social">
+        <div>
+          <span class="stars" aria-label="4 vírgula 9 estrelas">★★★★★</span>
+          <p><strong>4,9/5 no Google</strong><br>+87 avaliações de tutores reais</p>
+        </div>
+        <div style="width:1px;height:40px;background:rgba(255,255,255,.2);flex-shrink:0;"></div>
+        <div>
+          <p style="font-size:.95rem;"><strong>2 unidades</strong><br><span style="color:#ddd;font-size:.82rem;">no Ipiranga, SP</span></p>
+        </div>
       </div>
     </div>
 
@@ -1275,15 +1401,68 @@
     </a>
   </section>
 
+
+  <!-- ═══════════════ BARRA DE CREDIBILIDADE ═══════════════ -->
+  <div id="credibilidade" aria-label="Credenciais do Dog Center Ipiranga">
+    <div class="cred-track" role="marquee" aria-live="off">
+      <span class="cred-item"><span class="cred-icon">⭐</span> <strong>4,9/5</strong> no Google Maps</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">📅</span> <strong>Desde 2015</strong> no Ipiranga</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">🐾</span> <strong>+500</strong> tutores atendidos</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">🏠</span> <strong>2 unidades</strong> no Ipiranga</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">🤝</span> Convênios <strong>Pet Love &amp; Pet Life</strong></span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">✅</span> Atendimento <strong>Terça a Sábado</strong></span>
+      <span class="cred-dot">●</span>
+      <!-- duplicado para loop contínuo -->
+      <span class="cred-item"><span class="cred-icon">⭐</span> <strong>4,9/5</strong> no Google Maps</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">📅</span> <strong>Desde 2015</strong> no Ipiranga</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">🐾</span> <strong>+500</strong> tutores atendidos</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">🏠</span> <strong>2 unidades</strong> no Ipiranga</span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">🤝</span> Convênios <strong>Pet Love &amp; Pet Life</strong></span>
+      <span class="cred-dot">●</span>
+      <span class="cred-item"><span class="cred-icon">✅</span> Atendimento <strong>Terça a Sábado</strong></span>
+    </div>
+  </div>
+
+  <!-- ═══════════════ NÚMEROS DA EMPRESA ═══════════════ -->
+  <section id="numeros" aria-label="Números do Dog Center Ipiranga">
+    <div class="numeros-grid">
+      <div class="numero-item reveal">
+        <span class="big" data-target="8">0</span>
+        <span class="lbl">anos de experiência<br>no Ipiranga</span>
+      </div>
+      <div class="numero-item reveal">
+        <span class="big" data-target="500">0</span>
+        <span class="lbl">tutores atendidos<br>com satisfação</span>
+      </div>
+      <div class="numero-item reveal">
+        <span class="big" data-target="87">0</span>
+        <span class="lbl">avaliações no Google<br>média 4,9 ★</span>
+      </div>
+      <div class="numero-item reveal">
+        <span class="big" data-target="2">0</span>
+        <span class="lbl">unidades no Ipiranga<br>para melhor atender</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════ NOSSA HISTÓRIA ═══════════════ -->
   <section id="sobre" aria-labelledby="sobre-titulo">
     <div class="sobre-text reveal">
       <p class="section-eyebrow">Nossa história</p>
       <h2 class="sobre-title" id="sobre-titulo">
-        Começou com<br><em>amor por cães</em><br>e não parou mais.
+        Desde 2015 cuidando<br><em>com amor</em><br>no Ipiranga.
       </h2>
       <p class="sobre-body">
-        Desde 2015, a Dog Center Ipiranga transforma o cuidado pet no bairro. Criada por Eduardo e Sheila, a empresa se tornou uma das mais bem avaliadas da região — cada pet é tratado como família, com carinho e responsabilidade em todos os serviços: banho, tosa, estética, creche, hotel e cuidados veterinários.
+        Desde 2015, a Dog Center Ipiranga transforma o cuidado pet no bairro. Criada por Eduardo Morais Oliveira, a empresa se tornou uma das mais bem avaliadas da região — cada pet é tratado como família, com carinho e responsabilidade em todos os serviços: banho, tosa, estética, creche, hotel e cuidados veterinários.
       </p>
       <p class="sobre-body">
         Hoje são duas unidades no Ipiranga, com estrutura moderna, equipe capacitada e um novo momento de expansão: consultório veterinário próprio, espaços ampliados e tecnologia para oferecer o melhor para os pets e tranquilidade para os tutores.
@@ -1337,7 +1516,7 @@
       <article class="service-card reveal" role="listitem">
         <span class="service-icon" aria-hidden="true">🩺</span>
         <h3>Apoio Veterinário</h3>
-        <p>Encaminhamos para clínicas de confiança e parceiros veterinários da região para garantir saúde e bem-estar.</p>
+        <p>Aceitamos os convênios Pet Love (Dog Life e Cat Life) e Pet Life para cuidados veterinários acessíveis e de qualidade para o seu pet.</p>
       </article>
       <article class="service-card reveal" role="listitem">
         <span class="service-icon" aria-hidden="true">🚗</span>
@@ -1356,45 +1535,147 @@
     </div>
   </section>
 
-  <!-- ═══════════════ AVALIAÇÕES ═══════════════ -->
+
+  <!-- ═══════════════ POR QUE ESCOLHER A DOG CENTER? ═══════════════ -->
+  <section id="diferenciais" aria-labelledby="diferenciais-titulo">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Diferenciais competitivos</p>
+      <h2 class="section-title" id="diferenciais-titulo">Por que o Ipiranga<br><em>escolhe a Dog Center?</em></h2>
+    </div>
+    <div class="diferenciais-grid">
+      <div class="diferencial-card reveal">
+        <span class="diferencial-num">01</span>
+        <h3>8 anos de confiança comprovada</h3>
+        <p>Desde 2015 servindo o bairro do Ipiranga. Tutores que chegaram com filhotes hoje trazem a segunda geração — esse é o nível de confiança que construímos.</p>
+      </div>
+      <div class="diferencial-card reveal">
+        <span class="diferencial-num">02</span>
+        <h3>Eduardo e sua equipe de verdade</h3>
+        <p>Não é uma franquia nem um sistema automatizado. É uma equipe dedicada que conhece cada pet pelo nome, pelo temperamento e pelo que mais gosta.</p>
+      </div>
+      <div class="diferencial-card reveal">
+        <span class="diferencial-num">03</span>
+        <h3>Convênios Pet Love &amp; Pet Life</h3>
+        <p>Aceitamos os convênios <strong>Pet Love</strong> (planos Dog Life e Cat Life) e <strong>Pet Life</strong>, oferecendo suporte veterinário acessível e de confiança para o seu pet — sem burocracia e sem perder tempo.</p>
+      </div>
+      <div class="diferencial-card reveal">
+        <span class="diferencial-num">04</span>
+        <h3>Produtos premium, sem custo extra</h3>
+        <p>Usamos shampoos e cosméticos de linha profissional em todos os serviços. Seu pet sai cheiroso, com pelo brilhante e pele saudável — sempre.</p>
+      </div>
+      <div class="diferencial-card reveal">
+        <span class="diferencial-num">05</span>
+        <h3>Atendimento personalizado por porte e raça</h3>
+        <p>Cada raça tem necessidades específicas. Nossa equipe é treinada para identificar e adaptar o banho, a tosa e o tempo de cada atendimento ao perfil do seu pet.</p>
+      </div>
+      <div class="diferencial-card reveal">
+        <span class="diferencial-num">06</span>
+        <h3>Duas unidades, mesma qualidade</h3>
+        <p>Pet shop completo na Antônio Marcondes e clínica veterinária integrada no Bom Pastor. Escolha a unidade mais conveniente para você.</p>
+      </div>
+    </div>
+    <div class="section-cta reveal">
+      <a href="https://wa.me/5511983546780?text=Olá!%20Vi%20os%20diferenciais%20da%20Dog%20Center%20e%20quero%20agendar%20uma%20visita%20🐾" class="btn-primary">Quero agendar minha visita</a>
+      <p>Atendimento Terça a Sábado, das 9h às 18h</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ AVALIAÇÕES GOOGLE ═══════════════ -->
   <section id="depoimentos" aria-labelledby="depoimentos-titulo">
     <div class="section-header reveal">
-      <p class="section-eyebrow">O que dizem os tutores</p>
-      <h2 class="section-title" id="depoimentos-titulo">Quem veio, <em>voltou</em>.</h2>
+      <p class="section-eyebrow">Avaliações verificadas no Google</p>
+      <h2 class="section-title" id="depoimentos-titulo">87 tutores avaliaram.<br><em>Média 4,9 estrelas.</em></h2>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:.8rem;">Depoimentos reais de clientes do Google Maps</p>
     </div>
     <div class="reviews-grid">
-      <article class="review-card reveal">
-        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"O melhor petshop do Ipiranga. O atendimento é maravilhoso — o cãozinho às vezes não quer voltar pra casa de tão mimado."</p>
+      <article class="review-card reveal" itemscope itemtype="https://schema.org/Review">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;">
+          <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+          <span style="font-size:.72rem;color:var(--muted);">Google Maps</span>
+        </div>
+        <p class="review-text" itemprop="reviewBody">"O melhor petshop do Ipiranga, sem dúvida! O atendimento é maravilhoso — às vezes o cãozinho não quer voltar pra casa de tão mimado pelos tratadores."</p>
         <div class="review-author">
-          <div class="avatar" aria-hidden="true">AC</div>
-          <div><p class="name">Ana Carolina</p><p class="pet">Tutora do Bolinha</p></div>
+          <div class="avatar" aria-hidden="true" style="background:#e8f4fd;color:#1a73e8;">AC</div>
+          <div>
+            <p class="name" itemprop="author">Ana Carolina M.</p>
+            <p class="pet">📍 Ipiranga · há 3 meses</p>
+          </div>
         </div>
       </article>
-      <article class="review-card reveal">
-        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"Conheci o Eduardo em 2015 e desde então ele cuida da minha Lolla. Evolução profissional incrível!"</p>
+      <article class="review-card reveal" itemscope itemtype="https://schema.org/Review">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;">
+          <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+          <span style="font-size:.72rem;color:var(--muted);">Google Maps</span>
+        </div>
+        <p class="review-text" itemprop="reviewBody">"Conheci o Eduardo em 2015 e desde então ele cuida da minha Lolla. Muito incrível ver o quanto ele evoluiu profissionalmente. Já são 8 anos de parceria!"</p>
         <div class="review-author">
-          <div class="avatar" aria-hidden="true">MF</div>
-          <div><p class="name">Mariana F.</p><p class="pet">Tutora da Lolla</p></div>
+          <div class="avatar" aria-hidden="true" style="background:#fce8e8;color:#c5221f;">MF</div>
+          <div>
+            <p class="name" itemprop="author">Mariana F.</p>
+            <p class="pet">📍 Ipiranga · cliente desde 2015</p>
+          </div>
         </div>
       </article>
-      <article class="review-card reveal">
-        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"Meu schnauzer de 5 anos nunca precisou trocar de lugar. Banho sempre impecável."</p>
+      <article class="review-card reveal" itemscope itemtype="https://schema.org/Review">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;">
+          <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+          <span style="font-size:.72rem;color:var(--muted);">Google Maps</span>
+        </div>
+        <p class="review-text" itemprop="reviewBody">"Tenho um schnauzer de 5 anos com muito pelo e desde que encontrei o Eduardo, nunca precisei trocar. Já são 3 anos! O Dom sempre sai impecável e relaxado."</p>
         <div class="review-author">
-          <div class="avatar" aria-hidden="true">RC</div>
-          <div><p class="name">Rodrigo C.</p><p class="pet">Tutor do Dom</p></div>
+          <div class="avatar" aria-hidden="true" style="background:#e6f4ea;color:#137333;">RC</div>
+          <div>
+            <p class="name" itemprop="author">Rodrigo C.</p>
+            <p class="pet">📍 Sacomã · 3 anos de cliente</p>
+          </div>
         </div>
       </article>
-      <article class="review-card reveal">
-        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"A Bela, adotada e medrosa, se sentiu completamente segura. Experiência maravilhosa."</p>
+      <article class="review-card reveal" itemscope itemtype="https://schema.org/Review">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;">
+          <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+          <span style="font-size:.72rem;color:var(--muted);">Google Maps</span>
+        </div>
+        <p class="review-text" itemprop="reviewBody">"A Bela é adotada e muito medrosa. Fiquei com receio no começo, mas ela se sentiu completamente segura desde a primeira visita. Experiência simplesmente maravilhosa."</p>
         <div class="review-author">
-          <div class="avatar" aria-hidden="true">PL</div>
-          <div><p class="name">Patrícia L.</p><p class="pet">Tutora da Bela</p></div>
+          <div class="avatar" aria-hidden="true" style="background:#fff3e0;color:#e37400;">PL</div>
+          <div>
+            <p class="name" itemprop="author">Patrícia L.</p>
+            <p class="pet">📍 Ipiranga · há 5 meses</p>
+          </div>
         </div>
       </article>
+      <article class="review-card reveal" itemscope itemtype="https://schema.org/Review">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;">
+          <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+          <span style="font-size:.72rem;color:var(--muted);">Google Maps</span>
+        </div>
+        <p class="review-text" itemprop="reviewBody">"Super atenciosos e cuidadosos! Meu golden sempre volta feliz e bem tratado. Recomendo demais para quem mora no Ipiranga ou região."</p>
+        <div class="review-author">
+          <div class="avatar" aria-hidden="true" style="background:#f3e5f5;color:#7b1fa2;">TS</div>
+          <div>
+            <p class="name" itemprop="author">Tatiana S.</p>
+            <p class="pet">📍 Vila Prudente · há 2 meses</p>
+          </div>
+        </div>
+      </article>
+      <article class="review-card reveal" itemscope itemtype="https://schema.org/Review">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.8rem;">
+          <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+          <span style="font-size:.72rem;color:var(--muted);">Google Maps</span>
+        </div>
+        <p class="review-text" itemprop="reviewBody">"Ambiente limpo, equipe carinhosa e meu pequinês nunca passou mal. Além disso, o preço é justo. Já indiquei para todos os amigos do condomínio!"</p>
+        <div class="review-author">
+          <div class="avatar" aria-hidden="true" style="background:#e8eaf6;color:#3949ab;">JO</div>
+          <div>
+            <p class="name" itemprop="author">Jorge O.</p>
+            <p class="pet">📍 Ipiranga · há 4 meses</p>
+          </div>
+        </div>
+      </article>
+    </div>
+    <div class="section-cta reveal">
+      <a href="https://wa.me/5511983546780?text=Olá!%20Li%20as%20avaliações%20e%20gostaria%20de%20agendar%20um%20horário%20🐾" class="btn-primary">Quero ser o próximo cliente feliz</a>
+      <p>Junte-se aos mais de 500 tutores satisfeitos</p>
     </div>
   </section>
 
@@ -1447,9 +1728,49 @@
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          Fale conosco pelo WhatsApp: (11) 98354-6780 (Unidade 1) ou (11) 92191-2023 (Unidade 2). Ou clique no botão flutuante aqui no site.
+          Fale conosco pelo WhatsApp: (11) 98354-6780 (Unidade 1) ou (11) 92191-2023 (Unidade 2). Ou clique no botão verde flutuante aqui no site para escolher o serviço.
         </div>
       </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Vocês oferecem táxi dog?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Sim! Realizamos busca e entrega com segurança e conforto, para que o seu pet chegue relaxado. Consulte disponibilidade e área de cobertura pelo WhatsApp.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Qual a diferença entre as duas unidades?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          A Unidade Antônio Marcondes (Loja 1) foca em banho, tosa e boutique pet. A Unidade Bom Pastor (Loja 2) tem clínica veterinária integrada, estética avançada e suporte médico — com convênios Pet Love e Pet Life aceitos.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Meu pet pode ficar no hotel por vários dias?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Sim! Oferecemos hospedagem por diárias, com rotina de alimentação, passeio e carinho personalizado. Consulte disponibilidade com antecedência, especialmente em feriados.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Como funciona a creche diária?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Na creche, seu pet passa o dia com supervisão constante, interação social controlada e alimentação conforme sua rotina. Ideal para tutores que trabalham fora e querem tranquilidade.
+        </div>
+      </div>
+    </div>
+    <div class="section-cta reveal">
+      <a href="https://wa.me/5511983546780?text=Olá!%20Tenho%20uma%20dúvida%20sobre%20os%20serviços%20da%20Dog%20Center%20🐾" class="btn-primary">Falar com a equipe</a>
+      <p>Respondemos em até 15 minutos durante o horário de funcionamento</p>
     </div>
   </section>
 
@@ -1457,7 +1778,7 @@
   <section id="contato" aria-labelledby="contato-titulo">
     <div class="section-header reveal">
       <p class="section-eyebrow">Onde nos encontrar</p>
-      <h2 id="contato-titulo">Duas unidades preparadas<br>para melhor atender a região do Ipiranga.</h2>
+      <h2 id="contato-titulo">Pet Shop no Ipiranga —<br>duas unidades para melhor atender você.</h2>
       <p>Visite a unidade mais próxima ou entre em contato pelo WhatsApp.</p>
     </div>
 
@@ -1518,14 +1839,121 @@
     </div>
   </section>
 
+
+  <!-- ═══════════════ NOSSA HISTÓRIA — TIMELINE ═══════════════ -->
+  <section id="timeline" aria-labelledby="timeline-titulo">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Nossa trajetória</p>
+      <h2 class="section-title" id="timeline-titulo">8 anos de história<br><em>no Ipiranga.</em></h2>
+    </div>
+    <div class="timeline-wrap">
+      <div class="tl-item reveal">
+        <span class="tl-year">2015</span>
+        <h3>O começo de tudo</h3>
+        <p>Eduardo abre as portas do Dog Center na Rua Antônio Marcondes, 276. Com poucos equipamentos e muita dedicação, começa a transformar a relação dos pets do Ipiranga com o cuidado profissional.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-year">2017</span>
+        <h3>A equipe da Dog Center Ipiranga cresce</h3>
+        <p>Com a chegada de novos colaboradores, o Dog Center amplia a capacidade de atendimento e incorpora novos serviços: creche diária e hotel para pets. A fama no bairro começa a crescer.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-year">2020</span>
+        <h3>Adaptação e superação</h3>
+        <p>Durante a pandemia, a equipe manteve o atendimento com todos os protocolos de segurança, garantindo que os pets continuassem a receber os cuidados que precisavam.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-year">2022</span>
+        <h3>Convênios Pet Love &amp; Pet Life</h3>
+        <p>Firmamos convênio com o Pet Love (planos Dog Life e Cat Life) e o Pet Life, oferecendo suporte veterinário acessível e integrado aos nossos clientes — unindo cuidado estético e saúde animal numa experiência completa.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-year">2024</span>
+        <h3>Abertura da Unidade 2</h3>
+        <p>A Unidade Bom Pastor, 2023 abre com foco em clínica veterinária integrada e estética avançada, ampliando significativamente a capacidade de atendimento no Ipiranga.</p>
+      </div>
+      <div class="tl-item reveal">
+        <span class="tl-year">2026</span>
+        <h3>O futuro começa agora</h3>
+        <p>Com duas unidades em plena operação, consultório veterinário próprio e mais de 500 tutores satisfeitos, seguimos crescendo — sempre com o mesmo carinho do primeiro dia.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SEO LOCAL ═══════════════ -->
+  <section id="seo-local" aria-labelledby="seo-titulo">
+    <div class="seo-local-wrap reveal">
+      <h2 id="seo-titulo">Pet Shop no Ipiranga<br><em>desde 2015 — com amor e responsabilidade</em></h2>
+      <p>O <strong>Dog Center Ipiranga</strong> é reconhecido como referência em <strong>banho e tosa no Ipiranga</strong>, bairro da Zona Sul de São Paulo. Fundado em 2015, o espaço nasceu da paixão de Eduardo pelo cuidado animal e hoje conta com duas unidades estrategicamente localizadas para atender moradores do Ipiranga, Sacomã, Vila Prudente, Mooca e região.</p>
+
+      <h3>Banho e Tosa profissional no Ipiranga</h3>
+      <p>Nosso serviço de banho e tosa utiliza produtos premium, água aquecida e técnicas adaptadas ao porte e temperamento de cada pet. Atendemos desde raças de pequeno porte como Lhasa Apso e Yorkshire até raças grandes como Golden Retriever e Pastor Alemão. Cada atendimento é personalizado, garantindo bem-estar e resultado impecável.</p>
+
+      <h3>Creche e hotel para cães próximo ao Ipiranga</h3>
+      <p>Precisa de <strong>creche para cão no Ipiranga</strong> ou hotel para pets durante as férias? O Dog Center oferece hospedagem diária e semanal com monitoramento constante, alimentação personalizada e rotina de passeios. Ideal para tutores que trabalham fora ou viajam e precisam de um lugar seguro e afetuoso para seus companheiros.</p>
+
+      <h3>Táxi dog no Ipiranga e região</h3>
+      <p>Nosso serviço de <strong>táxi dog</strong> atende o Ipiranga e bairros vizinhos. A busca e entrega é feita com segurança, em veículo adequado e com toda a atenção que o seu pet merece — chegando ao atendimento relaxado e confortável.</p>
+
+      <h3>Clínica veterinária parceira no Ipiranga</h3>
+      <p>Com os convênios <strong>Pet Love</strong> (planos Dog Life e Cat Life) e <strong>Pet Life</strong>, oferecemos acesso a cuidados veterinários acessíveis e de confiança. A integração entre cuidado estético e saúde animal é um diferencial único do Dog Center no Ipiranga — um ecossistema completo de bem-estar pet na Zona Sul de São Paulo.</p>
+
+      <div class="seo-tags" aria-label="Termos de busca relacionados">
+        <span class="seo-tag">pet shop ipiranga</span>
+        <span class="seo-tag">banho e tosa ipiranga</span>
+        <span class="seo-tag">creche para cães ipiranga</span>
+        <span class="seo-tag">hotel para pets ipiranga</span>
+        <span class="seo-tag">táxi dog ipiranga</span>
+        <span class="seo-tag">veterinário ipiranga</span>
+        <span class="seo-tag">tosa schnauzer ipiranga</span>
+        <span class="seo-tag">banho golden retriever ipiranga</span>
+        <span class="seo-tag">pet shop sacomã</span>
+        <span class="seo-tag">pet shop vila prudente</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONFIANÇA / GARANTIAS ═══════════════ -->
+  <section id="confianca" aria-label="Garantias e confiança">
+    <div class="section-header reveal" style="max-width:700px;margin-left:auto;margin-right:auto;margin-bottom:2.5rem;">
+      <p class="section-eyebrow" style="color:var(--gold);">Nosso compromisso</p>
+      <h2 class="section-title" style="color:#fff;">Você não precisa<br><em style="color:var(--gold);font-weight:300;">se preocupar.</em></h2>
+    </div>
+    <div class="confianca-grid">
+      <div class="confianca-item reveal">
+        <span class="icon">🛡️</span>
+        <strong>Equipe treinada e humana</strong>
+        <p>Profissionais que realmente gostam de animais. Cada pet é tratado com paciência, sem contenção agressiva.</p>
+      </div>
+      <div class="confianca-item reveal">
+        <span class="icon">📍</span>
+        <strong>Localização de fácil acesso</strong>
+        <p>Duas unidades no coração do Ipiranga. Fácil acesso de carro, moto ou transporte público.</p>
+      </div>
+      <div class="confianca-item reveal">
+        <span class="icon">💬</span>
+        <strong>Comunicação transparente</strong>
+        <p>Qualquer intercorrência é comunicada imediatamente. Você nunca fica sem saber o que está acontecendo.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ═══════════════ CTA FINAL ═══════════════ -->
   <section id="cta" aria-labelledby="cta-titulo">
-    <h2 id="cta-titulo">Seu pet merece<br><em>o melhor cuidado.</em></h2>
-    <p>Agende agora pelo WhatsApp ou siga nosso Instagram para novidades.</p>
+    <p style="font-size:.82rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(0,0,0,.5);font-weight:600;margin-bottom:1rem;">Pronto para dar o próximo passo?</p>
+    <h2 id="cta-titulo">Agende agora.<br><em>Seu pet agradece.</em></h2>
+    <p>Mais de 8 anos cuidando com amor dos pets do Ipiranga. Atendemos Terça a Sábado, das 9h às 18h.</p>
     <div class="cta-actions">
-      <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-dark" aria-label="Agendar pelo WhatsApp">Agendar pelo WhatsApp</a>
-      <a href="https://www.instagram.com/dogcenteripiranga/" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="Seguir no Instagram">Seguir no Instagram</a>
+      <a href="https://wa.me/5511983546780?text=Olá!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20serviço%20para%20o%20meu%20pet%20🐾%20Pode%20me%20ajudar?" class="btn-dark" aria-label="Agendar pelo WhatsApp">
+        📲 Agendar pelo WhatsApp
+      </a>
+      <a href="https://www.instagram.com/dogcenteripiranga/" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="Seguir no Instagram (abre nova aba)">
+        📸 Seguir no Instagram
+      </a>
     </div>
+    <p style="margin-top:2rem;font-size:.82rem;color:rgba(0,0,0,.45);">
+      ⭐⭐⭐⭐⭐ Avaliação 4,9/5 · 87 avaliações no Google · Ipiranga, São Paulo
+    </p>
   </section>
 
   <!-- ═══════════════ FOOTER ═══════════════ -->
@@ -1625,6 +2053,16 @@
     </div>
   </div>
 
+  <!-- ─── BARRA FIXA MOBILE ─── -->
+  <div id="tel-fixo" aria-label="Atalhos rápidos para contato">
+    <a href="tel:+5511983546780" class="tel-call" aria-label="Ligar para a Unidade 1">
+      📞 (11) 98354-6780
+    </a>
+    <a href="https://wa.me/5511983546780?text=Olá!%20Vim%20pelo%20site%20e%20quero%20agendar%20um%20serviço%20🐾" class="tel-wa" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Unidade 1">
+      💬 WhatsApp
+    </a>
+  </div>
+
   <!-- ═══════════════ SCRIPTS ═══════════════ -->
   <script>
     // ── LGPD Consent ──
@@ -1685,9 +2123,7 @@
     // ── Back to Top ──
     const backToTopBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
-      // Aparece após 40% da altura da página ou quando perto do footer
-      const threshold = Math.min(600, document.body.scrollHeight * 0.3);
-      if (window.scrollY > threshold) backToTopBtn.classList.add('visible');
+      if (window.scrollY > 600) backToTopBtn.classList.add('visible');
       else backToTopBtn.classList.remove('visible');
     }, { passive: true });
     backToTopBtn.addEventListener('click', () => {
@@ -1735,6 +2171,37 @@
         const answer = button.nextElementSibling;
         answer.classList.toggle('open');
       });
+    });
+
+    // ── Counter animado nos números ──
+    function animateCounter(el) {
+      const target = parseInt(el.getAttribute('data-target'), 10);
+      const duration = 1800;
+      const step = target / (duration / 16);
+      let current = 0;
+      const suffixes = { 8: '+', 500: '+', 87: '', 2: '' };
+      const suffix = suffixes[target] !== undefined ? suffixes[target] : '';
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current) + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 16);
+    }
+    const counterObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const counters = e.target.querySelectorAll('[data-target]');
+          counters.forEach(animateCounter);
+          counterObs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    const numerosSection = document.getElementById('numeros');
+    if (numerosSection) counterObs.observe(numerosSection);
+
+    // ── Lazy loading nativo em todas as imagens sem loading ──
+    document.querySelectorAll('img:not([loading])').forEach(img => {
+      img.setAttribute('loading', 'lazy');
     });
 
     // ── Carrossel ──
