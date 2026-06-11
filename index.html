@@ -1,25 +1,86 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
 <head>
+  <!-- Metadados e SEO -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Dog Center Ipiranga – Banho, Tosa, Creche, Hotel e Veterinária no Ipiranga, São Paulo. Cuidado com amor desde 2015." />
+  <meta name="description" content="Dog Center Ipiranga – Referência em banho, tosa, creche, hotel e veterinária no Ipiranga desde 2015. Cuidado com amor e confiança. Duas unidades. Agende pelo WhatsApp." />
+  <meta name="keywords" content="pet shop Ipiranga, banho e tosa Ipiranga, creche para cães Ipiranga, hotel para pets Ipiranga, veterinário Ipiranga, Dog Center Ipiranga, Eduardo e Sheila" />
+  <meta name="author" content="Dog Center Ipiranga" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.dogcenteripiranga.com.br/" />
+
+  <!-- Open Graph -->
   <meta property="og:title" content="Dog Center Ipiranga – Cuidado com quem você ama" />
   <meta property="og:description" content="Banho & Tosa, Creche, Hotel, Veterinária e muito mais no coração do Ipiranga." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=1200" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://www.dogcenteripiranga.com.br/" />
+  <meta property="og:site_name" content="Dog Center Ipiranga" />
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png" />
   <link rel="apple-touch-icon" href="logo.png" />
+
+  <!-- Schema.org JSON-LD para SEO local -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Dog Center Ipiranga",
+      "image": "https://www.dogcenteripiranga.com.br/logo.png",
+      "description": "Referência em banho, tosa, estética animal, hospedagem, creche e cuidados veterinários no Ipiranga.",
+      "telephone": ["+5511983546780", "+5511921912023"],
+      "email": "dogcenteripiranga@gmail.com",
+      "address": [
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Antônio Marcondes, 276",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "04227-000",
+          "addressCountry": "BR"
+        },
+        {
+          "@type": "PostalAddress",
+          "streetAddress": "Rua Bom Pastor, 2023",
+          "addressLocality": "São Paulo",
+          "addressRegion": "SP",
+          "postalCode": "04203-050",
+          "addressCountry": "BR"
+        }
+      ],
+      "sameAs": [
+        "https://www.instagram.com/dogcenteripiranga/"
+      ],
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "18:00"
+        }
+      ]
+    }
+  </script>
+
   <title>Dog Center Ipiranga - Pet Shop Referência no Ipiranga</title>
 
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── TOKENS ── */
+    /* ── DESIGN TOKENS ── */
     :root {
       --gold:    #F5C000;
       --red:     #E03A2F;
@@ -59,7 +120,7 @@
       *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
     }
 
-    /* ── SKIP LINK ── */
+    /* ── SKIP LINK (acessibilidade) ── */
     .skip-link {
       position: absolute; top: -9999px; left: 1rem;
       background: var(--gold); color: var(--black);
@@ -76,7 +137,8 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: .9rem 2rem;
     }
-    .nav-logo img { height: 52px; width: auto; display: block; }
+    /* Logo ajustado para 75px (altura) */
+    .nav-logo img { height: 75px; width: auto; display: block; }
     .nav-links {
       display: flex; gap: 2rem; list-style: none;
     }
@@ -98,6 +160,7 @@
     }
     .nav-links a:hover { color: var(--gold); }
     .nav-links a:hover::after { width: 100%; }
+    /* Destaque do link ativo (via IntersectionObserver) */
     .nav-links a[aria-current="page"] { color: var(--gold); }
     .nav-links a[aria-current="page"]::after { width: 100%; }
 
@@ -113,7 +176,7 @@
     }
     .nav-cta:hover { background: #c42f25; transform: scale(1.03); }
 
-    /* hamburger */
+    /* ── HAMBURGUER MENU ── */
     .hamburger {
       display: none; background: none; border: none;
       cursor: pointer; padding: .3rem; color: var(--black);
@@ -130,9 +193,10 @@
         gap: 1.2rem; border-top: 1px solid var(--border);
         box-shadow: 0 12px 32px rgba(0,0,0,.08);
       }
+      .nav-logo img { height: 60px; } /* Logo um pouco menor em tablets */
     }
 
-    /* ── HERO (COM VÍDEO) ── */
+    /* ── HERO COM VÍDEO DE FUNDO ── */
     #inicio {
       min-height: 100svh;
       display: grid;
@@ -154,6 +218,7 @@
       z-index: 0;
     }
 
+    /* Overlay escuro para garantir contraste do texto */
     #inicio::after {
       content: '';
       position: absolute;
@@ -232,6 +297,7 @@
     .hero-social-proof p { font-size: .85rem; color: #ccc; line-height: 1.4; }
     .hero-social-proof strong { color: #fff; }
 
+    /* ── HERO VISUAL ── */
     .hero-visual {
       position: relative;
       display: flex; align-items: center; justify-content: center;
@@ -264,12 +330,8 @@
       animation: floatY 5s ease-in-out infinite;
       box-shadow: 0 8px 24px rgba(0,0,0,.12);
     }
-    .hero-float-card .num {
-      font-size: 1.6rem; font-weight: 900; color: var(--black); line-height: 1;
-    }
-    .hero-float-card .lbl {
-      font-size: .7rem; font-weight: 300; color: #444; letter-spacing: .05em;
-    }
+    .hero-float-card .num { font-size: 1.6rem; font-weight: 900; color: var(--black); line-height: 1; }
+    .hero-float-card .lbl { font-size: .7rem; font-weight: 300; color: #444; letter-spacing: .05em; }
     .card-anos { bottom: 24px; left: -20px; }
     .card-nota { top: 28px; right: -20px; }
     @keyframes floatY {
@@ -277,6 +339,7 @@
       50%       { transform: translateY(-10px); }
     }
 
+    /* Scroll hint */
     .hero-scroll-hint {
       position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
       display: flex; flex-direction: column; align-items: center; gap: 4px;
@@ -294,6 +357,7 @@
       50%       { transform: rotate(45deg) translateY(5px); }
     }
 
+    /* ── SEPARADOR DE PAWS ── */
     .paw-divider {
       display: flex; align-items: center; gap: 1rem;
       margin: 0 auto 1rem;
@@ -304,11 +368,7 @@
       content: ''; flex: 1; height: 1px; background: var(--border);
     }
 
-    /* ── SERVIÇOS ── */
-    #servicos {
-      background: var(--stone);
-      padding: 5rem 4rem;
-    }
+    /* ── SEÇÕES GENÉRICAS ── */
     .section-header { text-align: center; margin-bottom: 3.5rem; }
     .section-eyebrow {
       font-size: .78rem; font-weight: 600; text-transform: uppercase;
@@ -321,6 +381,109 @@
     }
     .section-title em { font-style: italic; font-weight: 300; color: var(--muted); }
 
+    /* ── SOBRE ── */
+    #sobre {
+      background: var(--offwhite);
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+    }
+    .sobre-text .section-eyebrow { color: var(--gold); }
+    .sobre-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 900; color: var(--black); line-height: 1.15;
+      margin: .5rem 0 1.2rem;
+    }
+    .sobre-title em { font-style: italic; font-weight: 300; color: var(--gold); }
+    .sobre-body { color: var(--muted); line-height: 1.8; font-size: .97rem; }
+    .sobre-body + .sobre-body { margin-top: 1rem; }
+    .sobre-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+    }
+    .stat-box .num {
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem; font-weight: 900;
+      color: var(--red); line-height: 1;
+    }
+    .stat-box .lbl { font-size: .82rem; color: var(--muted); margin-top: .3rem; }
+
+    /* Carrossel na área Sobre */
+    .sobre-visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .carousel { width: 100%; height: 100%; position: relative; }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%; transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .carousel-btn:hover { background: rgba(0,0,0,0.8); }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 12px; left: 50%; transform: translateX(-50%);
+      display: flex; gap: 8px; z-index: 10;
+    }
+    .carousel-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active { background: var(--gold); }
+    .sobre-tag {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--red);
+      color: #fff; font-weight: 600; font-size: .85rem;
+      padding: .5rem 1rem; border-radius: 999px;
+      z-index: 15;
+      pointer-events: none;
+    }
+
+    /* ── SERVIÇOS ── */
+    #servicos {
+      background: var(--stone);
+      padding: 5rem 4rem;
+    }
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -354,168 +517,10 @@
     }
     .service-card p { font-size: .92rem; color: var(--muted); line-height: 1.65; }
 
-    /* ── SOBRE / DESTAQUES ── */
-    #sobre {
-      background: var(--offwhite);
-      padding: 5rem 4rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem; align-items: center;
-      max-width: 100%;
-    }
-    .sobre-text .section-eyebrow { color: var(--gold); }
-    .sobre-title {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(2rem, 3vw, 2.8rem);
-      font-weight: 900; color: var(--black); line-height: 1.15;
-      margin: .5rem 0 1.2rem;
-    }
-    .sobre-title em { font-style: italic; font-weight: 300; color: var(--gold); }
-    .sobre-body { color: var(--muted); line-height: 1.8; font-size: .97rem; }
-    .sobre-body + .sobre-body { margin-top: 1rem; }
-
-    .sobre-stats {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: 1.5rem; margin-top: 2.5rem;
-    }
-    .stat-box {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.4rem;
-    }
-    .stat-box .num {
-      font-family: 'Fraunces', serif;
-      font-size: 2.2rem; font-weight: 900;
-      color: var(--red); line-height: 1;
-    }
-    .stat-box .lbl {
-      font-size: .82rem; color: var(--muted); margin-top: .3rem;
-    }
-
-    .sobre-visual {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 4 / 5;
-      border-radius: var(--radius);
-      overflow: hidden;
-    }
-    .carousel {
-      width: 100%;
-      height: 100%;
-      position: relative;
-    }
-    .carousel-track {
-      display: flex;
-      height: 100%;
-      transition: transform 0.5s ease;
-    }
-    .carousel-slide {
-      min-width: 100%;
-      height: 100%;
-    }
-    .carousel-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    .carousel-btn {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      padding: 0.6rem 1rem;
-      border-radius: 4px;
-      font-size: 1.2rem;
-      z-index: 10;
-      transition: background 0.2s;
-    }
-    .carousel-btn:hover {
-      background: rgba(0,0,0,0.8);
-    }
-    .carousel-btn.prev { left: 8px; }
-    .carousel-btn.next { right: 8px; }
-    .carousel-dots {
-      position: absolute;
-      bottom: 12px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 8px;
-      z-index: 10;
-    }
-    .carousel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.5);
-      border: none;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .carousel-dot.active {
-      background: var(--gold);
-    }
-    .sobre-tag {
-      position: absolute; top: 16px; right: 16px;
-      background: var(--red);
-      color: #fff; font-weight: 600; font-size: .85rem;
-      padding: .5rem 1rem; border-radius: 999px;
-      z-index: 15;
-      pointer-events: none;
-    }
-
-    /* ── CTA INTERMEDIÁRIO ── */
-    #cta-meio {
-      background: var(--stone);
-      padding: 4rem;
-      display: flex; align-items: center;
-      gap: 3rem; max-width: 100%;
-      flex-wrap: wrap;
-    }
-    .cta-meio-badge {
-      background: var(--black);
-      border-radius: var(--radius);
-      padding: 2.5rem;
-      flex: 0 0 260px;
+    /* CTA após os serviços */
+    .services-cta {
       text-align: center;
-    }
-    .cta-meio-badge .paw-icon {
-      font-size: 3.5rem;
-      margin-bottom: 1rem;
-      color: var(--gold);
-    }
-    .cta-meio-badge .tag {
-      background: var(--red); color: #fff;
-      font-size: .7rem; font-weight: 700; letter-spacing: .08em;
-      text-transform: uppercase; padding: .3rem .8rem;
-      border-radius: 999px; display: inline-block; margin-bottom: .8rem;
-    }
-    .cta-meio-badge h3 {
-      font-family: 'Fraunces', serif;
-      font-size: 1.1rem; font-weight: 700; color: #fff;
-    }
-    .cta-meio-content { flex: 1; min-width: 260px; }
-    .cta-meio-content h2 {
-      font-family: 'Fraunces', serif;
-      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-      font-weight: 900; line-height: 1.2; margin-bottom: 1rem;
-    }
-    .cta-meio-content p { color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
-    .cta-meio-link {
-      display: inline-flex; align-items: center; gap: .5rem;
-      background: var(--red); color: #fff;
-      padding: .85rem 2rem; border-radius: 999px;
-      font-weight: 600; text-decoration: none;
-      font-size: .95rem; transition: background .2s, gap .2s;
-    }
-    .cta-meio-link:hover {
-      background: #c42f25;
-      gap: .8rem;
+      margin-top: 3rem;
     }
 
     /* ── DEPOIMENTOS ── */
@@ -546,9 +551,59 @@
     .review-author .name { font-weight: 600; font-size: .88rem; }
     .review-author .pet  { font-size: .8rem; color: var(--muted); }
 
-    /* ── CONTATO / UNIDADES ── */
-    #contato {
+    /* ── FAQ (Accordion acessível) ── */
+    #faq {
+      padding: 5rem 4rem;
       background: var(--stone);
+    }
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-question {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 1.2rem 0;
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-align: left;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--black);
+      transition: color 0.2s;
+    }
+    .faq-question:hover { color: var(--red); }
+    .faq-icon {
+      font-size: 1.5rem;
+      transition: transform 0.3s;
+    }
+    .faq-question[aria-expanded="true"] .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      padding: 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .95rem;
+    }
+    .faq-answer.open {
+      max-height: 400px;
+      padding-bottom: 1.5rem;
+    }
+
+    /* ── CONTATO / DUAS UNIDADES ── */
+    #contato {
+      background: var(--offwhite);
       padding: 5rem 4rem;
     }
     #contato .section-header {
@@ -626,9 +681,7 @@
       font-size: .9rem;
       line-height: 1.55;
     }
-    .unit-info p strong {
-      color: var(--black);
-    }
+    .unit-info p strong { color: var(--black); }
     .unit-info .unit-actions {
       margin-top: auto;
       padding-top: 1rem;
@@ -802,10 +855,7 @@
       transform: scale(1.08);
       box-shadow: 0 8px 32px rgba(37, 211, 102, .55);
     }
-    #whatsapp-toggle svg {
-      width: 28px;
-      height: 28px;
-    }
+    #whatsapp-toggle svg { width: 28px; height: 28px; }
     #whatsapp-toggle .pulse-ring {
       position: absolute;
       inset: -6px;
@@ -830,9 +880,7 @@
       overflow: hidden;
       animation: fadeInUp .25s ease;
     }
-    #whatsapp-modal.open {
-      display: flex;
-    }
+    #whatsapp-modal.open { display: flex; }
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: translateY(0); }
@@ -879,9 +927,7 @@
       font-family: 'DM Sans', sans-serif;
       line-height: 1.4;
     }
-    .whatsapp-modal-body .wa-msg:hover {
-      background: #e4e4e4;
-    }
+    .whatsapp-modal-body .wa-msg:hover { background: #e4e4e4; }
     .whatsapp-modal-body .wa-msg strong {
       display: block;
       font-size: .75rem;
@@ -1006,28 +1052,10 @@
       font-size: .78rem;
       color: #666;
     }
-    .footer-bottom a {
-      color: #888;
-      text-decoration: none;
-    }
+    .footer-bottom a { color: #888; text-decoration: none; }
     .footer-bottom a:hover { color: var(--gold); }
-    @media (max-width: 900px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-    @media (max-width: 600px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
 
-    /* ── RESPONSIVE ── */
+    /* ── RESPONSIVO ── */
     @media (max-width: 900px) {
       #inicio, #sobre {
         grid-template-columns: 1fr;
@@ -1037,31 +1065,28 @@
       .units-grid {
         grid-template-columns: 1fr;
         max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: auto; margin-right: auto;
       }
       .contato-extra {
         grid-template-columns: 1fr;
         max-width: 500px;
-        margin-left: auto;
-        margin-right: auto;
+        margin-left: auto; margin-right: auto;
       }
       .hero-badge-wrap { width: 300px; height: 300px; }
       .hero-circle { width: 280px; height: 280px; }
       .card-anos { bottom: 12px; left: 0; }
       .card-nota { top: 12px; right: 0; }
-      #servicos, #cta-meio, #depoimentos, #cta { padding: 3.5rem 2rem; }
-      #cta-meio { flex-direction: column; }
-      footer { padding: 3rem 2rem 2rem; }
-      #whatsapp-float { bottom: 1rem; right: 1rem; }
-      #back-to-top { bottom: 80px; right: 1rem; }
+      #servicos, #depoimentos, #faq, #cta { padding: 3.5rem 2rem; }
       .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      footer { padding: 3rem 2rem 2rem; }
+      #whatsapp-float { bottom: 1rem; right: 1rem; }
+      #back-to-top { bottom: 80px; right: 1rem; }
     }
     @media (max-width: 600px) {
       nav { padding: .8rem 1.2rem; }
-      .nav-logo img { height: 42px; }
+      .nav-logo img { height: 50px; } /* Ajuste fino para telas pequenas */
       .stat-box .num { font-size: 1.7rem; }
       #whatsapp-modal { width: 260px; }
       .services-grid {
@@ -1072,9 +1097,10 @@
 </head>
 
 <body>
+  <!-- Link de salto para conteúdo principal (acessibilidade) -->
   <a href="#inicio" class="skip-link">Pular para o conteúdo principal</a>
 
-  <!-- NAV -->
+  <!-- ═══════════════ NAVEGAÇÃO ═══════════════ -->
   <nav role="navigation" aria-label="Navegação principal">
     <div class="nav-logo">
       <a href="index.html" aria-label="Dog Center Ipiranga – página inicial">
@@ -1082,9 +1108,11 @@
       </a>
     </div>
     <ul class="nav-links" id="nav-menu" role="list">
-      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#inicio">Home</a></li>
       <li><a href="#sobre">Nossa História</a></li>
+      <li><a href="#servicos">Serviços</a></li>
       <li><a href="#depoimentos">Avaliações</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contato">Contato</a></li>
     </ul>
     <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="nav-cta" aria-label="Agendar via WhatsApp">Agendar</a>
@@ -1095,15 +1123,15 @@
     </button>
   </nav>
 
-  <!-- HERO (COM VÍDEO DE FUNDO) -->
+  <!-- ═══════════════ HERO (HOME) ═══════════════ -->
   <section id="inicio" aria-label="Introdução">
-    <video autoplay muted loop playsinline class="hero-video-bg">
+    <video autoplay muted loop playsinline poster="thumbnail.jpeg" class="hero-video-bg" aria-hidden="true">
       <source src="video.mp4" type="video/mp4" />
       Seu navegador não suporta vídeos HTML5.
     </video>
 
     <div class="hero-text reveal">
-      <span class="hero-eyebrow" aria-label="Destaque">Duas Unidades em Funcionamento 🐾</span>
+      <span class="hero-eyebrow">Duas Unidades em Funcionamento 🐾</span>
       <h1 class="hero-title">
         Cuidado com<br><em>quem você</em><br>mais ama.
       </h1>
@@ -1111,10 +1139,10 @@
         Banho, tosa, creche, hotel e suporte veterinário — tudo com o carinho que o Eduardo e a Sheila dedicam há anos ao seu melhor amigo.
       </p>
       <div class="hero-actions">
-        <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-primary" aria-label="Agendar serviço via WhatsApp">Agendar agora</a>
+        <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-primary">Agendar agora</a>
         <a href="#servicos" class="btn-outline">Ver serviços</a>
       </div>
-      <div class="hero-social-proof" aria-label="Avaliações dos clientes">
+      <div class="hero-social-proof">
         <span class="stars" aria-label="4,9 estrelas">★★★★★</span>
         <p><strong>4,9 no Google</strong><br>+500 tutores satisfeitos</p>
       </div>
@@ -1135,48 +1163,12 @@
         </div>
       </div>
     </div>
-    <a href="#servicos" class="hero-scroll-hint" aria-label="Rolar para ver os serviços">
+    <a href="#servicos" class="hero-scroll-hint" aria-label="Rolar para serviços">
       <span></span>
     </a>
   </section>
 
-  <!-- SERVIÇOS -->
-  <section id="servicos" aria-labelledby="servicos-titulo">
-    <div class="paw-divider" aria-hidden="true">🐾 nossos serviços 🐾</div>
-    <div class="section-header reveal">
-      <p class="section-eyebrow">O que oferecemos</p>
-      <h2 class="section-title" id="servicos-titulo">Tudo que o seu pet<br><em>precisa em um lugar</em></h2>
-    </div>
-    <div class="services-grid" role="list">
-      <article class="service-card reveal" role="listitem">
-        <span class="service-icon" aria-hidden="true">🛁</span>
-        <h3>Banho &amp; Tosa</h3>
-        <p>Produtos de qualidade premium, água na temperatura ideal e mãos experientes que tratam seu pet com paciência e amor.</p>
-      </article>
-      <article class="service-card reveal" role="listitem">
-        <span class="service-icon" aria-hidden="true">🏡</span>
-        <h3>Creche &amp; Hotel</h3>
-        <p>Ambiente acolhedor, monitoramento constante e rotina personalizada. Seu pet fica em ótimas mãos enquanto você trabalha ou viaja.</p>
-      </article>
-      <article class="service-card reveal" role="listitem">
-        <span class="service-icon" aria-hidden="true">🩺</span>
-        <h3>Apoio Veterinário</h3>
-        <p>Encaminhamos para clínicas de confiança e trabalhamos em parceria com veterinários da região para garantir saúde e bem-estar completos ao seu companheiro.</p>
-      </article>
-      <article class="service-card reveal" role="listitem">
-        <span class="service-icon" aria-hidden="true">🚗</span>
-        <h3>Táxi Dog</h3>
-        <p>Busca e entrega com segurança, conforto e carinho. Seu pet chega ao Dog Center relaxado e pronto para ser mimado.</p>
-      </article>
-      <article class="service-card reveal" role="listitem">
-        <span class="service-icon" aria-hidden="true">🛍️</span>
-        <h3>Pet Shop</h3>
-        <p>Ração, acessórios, brinquedos e produtos de higiene dos melhores fabricantes, à disposição na nossa loja física.</p>
-      </article>
-    </div>
-  </section>
-
-  <!-- SOBRE (TEXTO RESUMIDO) -->
+  <!-- ═══════════════ NOSSA HISTÓRIA ═══════════════ -->
   <section id="sobre" aria-labelledby="sobre-titulo">
     <div class="sobre-text reveal">
       <p class="section-eyebrow">Nossa história</p>
@@ -1190,25 +1182,14 @@
         Hoje são duas unidades no Ipiranga, com estrutura moderna, equipe capacitada e um novo momento de expansão: consultório veterinário próprio, espaços ampliados e tecnologia para oferecer o melhor para os pets e tranquilidade para os tutores.
       </p>
       <div class="sobre-stats" aria-label="Números do Dog Center">
-        <div class="stat-box">
-          <p class="num">8+</p>
-          <p class="lbl">anos de experiência</p>
-        </div>
-        <div class="stat-box">
-          <p class="num">4,9★</p>
-          <p class="lbl">avaliação no Google</p>
-        </div>
-        <div class="stat-box">
-          <p class="num">500+</p>
-          <p class="lbl">tutores atendidos</p>
-        </div>
-        <div class="stat-box">
-          <p class="num">2</p>
-          <p class="lbl">unidades (em breve)</p>
-        </div>
+        <div class="stat-box"><p class="num">8+</p><p class="lbl">anos de experiência</p></div>
+        <div class="stat-box"><p class="num">4,9★</p><p class="lbl">avaliação no Google</p></div>
+        <div class="stat-box"><p class="num">500+</p><p class="lbl">tutores atendidos</p></div>
+        <div class="stat-box"><p class="num">2</p><p class="lbl">unidades em breve</p></div>
       </div>
     </div>
 
+    <!-- Carrossel de fotos -->
     <div class="sobre-visual reveal" aria-hidden="true">
       <div class="carousel" id="carousel-sobre">
         <div class="carousel-track">
@@ -1228,36 +1209,47 @@
     </div>
   </section>
 
-  <!-- CTA INTERMEDIÁRIO -->
-  <section id="cta-meio" aria-labelledby="cta-meio-titulo">
-    <div class="cta-meio-badge reveal" aria-hidden="true">
-      <div class="paw-icon">🐾</div>
-      <span class="tag">Saúde em dia</span>
-      <h3>Check-up e bem-estar</h3>
+  <!-- ═══════════════ SERVIÇOS ═══════════════ -->
+  <section id="servicos" aria-labelledby="servicos-titulo">
+    <div class="paw-divider" aria-hidden="true">🐾 nossos serviços 🐾</div>
+    <div class="section-header reveal">
+      <p class="section-eyebrow">O que oferecemos</p>
+      <h2 class="section-title" id="servicos-titulo">Tudo que o seu pet<br><em>precisa em um lugar</em></h2>
     </div>
-    <div class="cta-meio-content reveal">
-      <h2 id="cta-meio-titulo">
-        Seu pet merece cuidado completo,<br>do banho à saúde.
-      </h2>
-      <p>
-        No Dog Center Ipiranga, além do carinho diário, orientamos você sobre os melhores cuidados veterinários. Agende uma avaliação e garanta que seu amigo esteja sempre feliz e protegido.
-      </p>
-      <a
-        href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20check-up%20para%20meu%20pet."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="cta-meio-link"
-        aria-label="Agendar check-up pelo WhatsApp"
-      >
-        Quero um check-up
-        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </a>
+    <div class="services-grid" role="list">
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🛁</span>
+        <h3>Banho &amp; Tosa</h3>
+        <p>Produtos premium, água na temperatura ideal e mãos experientes que tratam seu pet com paciência e amor.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🏡</span>
+        <h3>Creche &amp; Hotel</h3>
+        <p>Ambiente acolhedor, monitoramento constante e rotina personalizada. Seu pet em ótimas mãos enquanto você trabalha ou viaja.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🩺</span>
+        <h3>Apoio Veterinário</h3>
+        <p>Encaminhamos para clínicas de confiança e parceiros veterinários da região para garantir saúde e bem-estar.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🚗</span>
+        <h3>Táxi Dog</h3>
+        <p>Busca e entrega com segurança, conforto e carinho. Seu pet chega relaxado e pronto para ser mimado.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🛍️</span>
+        <h3>Pet Shop</h3>
+        <p>Ração, acessórios, brinquedos e produtos de higiene dos melhores fabricantes na nossa loja física.</p>
+      </article>
+    </div>
+    <!-- CTA rápido após os cards -->
+    <div class="services-cta reveal">
+      <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-primary">Agende pelo WhatsApp</a>
     </div>
   </section>
 
-  <!-- DEPOIMENTOS -->
+  <!-- ═══════════════ AVALIAÇÕES ═══════════════ -->
   <section id="depoimentos" aria-labelledby="depoimentos-titulo">
     <div class="section-header reveal">
       <p class="section-eyebrow">O que dizem os tutores</p>
@@ -1266,7 +1258,7 @@
     <div class="reviews-grid">
       <article class="review-card reveal">
         <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"O melhor petshop do Ipiranga. O atendimento é maravilhoso — o problema é que às vezes o cãozinho não quer voltar pra casa de tão mimado pelos tratadores."</p>
+        <p class="review-text">"O melhor petshop do Ipiranga. O atendimento é maravilhoso — o cãozinho às vezes não quer voltar pra casa de tão mimado."</p>
         <div class="review-author">
           <div class="avatar" aria-hidden="true">AC</div>
           <div><p class="name">Ana Carolina</p><p class="pet">Tutora do Bolinha</p></div>
@@ -1274,7 +1266,7 @@
       </article>
       <article class="review-card reveal">
         <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"Conheci o Eduardo em 2015 e desde então ele cuida da minha Lolla. Muito legal ver o quanto ele evoluiu profissionalmente. Este ano farão 8 anos juntos!"</p>
+        <p class="review-text">"Conheci o Eduardo em 2015 e desde então ele cuida da minha Lolla. Evolução profissional incrível!"</p>
         <div class="review-author">
           <div class="avatar" aria-hidden="true">MF</div>
           <div><p class="name">Mariana F.</p><p class="pet">Tutora da Lolla</p></div>
@@ -1282,7 +1274,7 @@
       </article>
       <article class="review-card reveal">
         <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"Tenho um schnauzer de 5 anos e desde que encontrei o Eduardo, nunca precisei trocar. Já faz 3 anos! O Dom tem muito pelo e sempre sai impecável."</p>
+        <p class="review-text">"Meu schnauzer de 5 anos nunca precisou trocar de lugar. Banho sempre impecável."</p>
         <div class="review-author">
           <div class="avatar" aria-hidden="true">RC</div>
           <div><p class="name">Rodrigo C.</p><p class="pet">Tutor do Dom</p></div>
@@ -1290,7 +1282,7 @@
       </article>
       <article class="review-card reveal">
         <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
-        <p class="review-text">"Minha experiência foi maravilhosa. O Eduardo cuidou da Bela com toda atenção e carinho — ela é adotada, medrosa, e se sentiu completamente segura."</p>
+        <p class="review-text">"A Bela, adotada e medrosa, se sentiu completamente segura. Experiência maravilhosa."</p>
         <div class="review-author">
           <div class="avatar" aria-hidden="true">PL</div>
           <div><p class="name">Patrícia L.</p><p class="pet">Tutora da Bela</p></div>
@@ -1299,7 +1291,62 @@
     </div>
   </section>
 
-  <!-- CONTATO / DUAS UNIDADES -->
+  <!-- ═══════════════ FAQ ═══════════════ -->
+  <section id="faq" aria-labelledby="faq-titulo">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Dúvidas comuns</p>
+      <h2 class="section-title" id="faq-titulo">Perguntas <em>frequentes</em></h2>
+    </div>
+    <div class="faq-container">
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Quanto tempo dura o banho e tosa?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Em média 1h30, dependendo do porte e pelagem. Usamos produtos premium e técnicas que respeitam o tempo do seu pet.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Preciso agendar com antecedência?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Sim, recomendamos agendamento via WhatsApp para garantir o melhor horário. Atendemos sob demanda conforme disponibilidade.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Vocês aceitam animais idosos ou com necessidades especiais?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Sim! Nossa equipe é treinada para cuidar de cães idosos, com restrições de saúde ou comportamentais. Agende uma avaliação prévia.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          A Unidade 2 (Bom Pastor) já está funcionando?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Sim! A Unidade Bom Pastor já está operando com foco em clínica veterinária e estética. Consulte horários e agende pelo WhatsApp.
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question" aria-expanded="false">
+          Como posso agendar um serviço?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          Fale conosco pelo WhatsApp: (11) 98354-6780 (Unidade 1) ou (11) 92191-2023 (Unidade 2). Ou clique no botão flutuante aqui no site.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTATO / UNIDADES ═══════════════ -->
   <section id="contato" aria-labelledby="contato-titulo">
     <div class="section-header reveal">
       <p class="section-eyebrow">Onde nos encontrar</p>
@@ -1310,13 +1357,9 @@
     <div class="units-grid">
       <article class="unit-card reveal">
         <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8!2d-46.606!3d-23.588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Ant%C3%B4nio+Marcondes%2C+276%2C+Ipiranga%2C+S%C3%A3o+Paulo!5e0!3m2!1spt!2sbr!4v1234567890"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa Unidade 1 – Rua Antônio Marcondes, 276"
-          ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8!2d-46.606!3d-23.588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Ant%C3%B4nio+Marcondes%2C+276%2C+Ipiranga%2C+S%C3%A3o+Paulo!5e0!3m2!1spt!2sbr!4v1234567890"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa Unidade 1 – Rua Antônio Marcondes, 276"></iframe>
         </div>
         <div class="unit-info">
           <span class="unit-badge">Loja 1 – Pet Shop</span>
@@ -1330,13 +1373,9 @@
       </article>
       <article class="unit-card reveal">
         <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4!2d-46.608!3d-23.595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Bom+Pastor%2C+2023%2C+Ipiranga%2C+S%C3%A3o+Paulo!5e0!3m2!1spt!2sbr!4v1234567891"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Mapa Unidade 2 – Rua Bom Pastor, 2023"
-          ></iframe>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4!2d-46.608!3d-23.595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Bom+Pastor%2C+2023%2C+Ipiranga%2C+S%C3%A3o+Paulo!5e0!3m2!1spt!2sbr!4v1234567891"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa Unidade 2 – Rua Bom Pastor, 2023"></iframe>
         </div>
         <div class="unit-info">
           <span class="unit-badge">Loja 2 – Clínica Veterinária</span>
@@ -1372,17 +1411,17 @@
     </div>
   </section>
 
-  <!-- CTA FINAL -->
+  <!-- ═══════════════ CTA FINAL ═══════════════ -->
   <section id="cta" aria-labelledby="cta-titulo">
     <h2 id="cta-titulo">Seu pet merece<br><em>o melhor cuidado.</em></h2>
-    <p>Agende agora pelo WhatsApp ou nos siga no Instagram para acompanhar as novidades da Unidade 2.</p>
+    <p>Agende agora pelo WhatsApp ou siga nosso Instagram para novidades.</p>
     <div class="cta-actions">
       <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-dark" aria-label="Agendar pelo WhatsApp">Agendar pelo WhatsApp</a>
-      <a href="https://www.instagram.com/dogcenteripiranga/" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="Seguir no Instagram (abre nova aba)">Seguir no Instagram</a>
+      <a href="https://www.instagram.com/dogcenteripiranga/" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="Seguir no Instagram">Seguir no Instagram</a>
     </div>
   </section>
 
-  <!-- FOOTER (DESCRIÇÃO RESUMIDA) -->
+  <!-- ═══════════════ FOOTER ═══════════════ -->
   <footer role="contentinfo">
     <div class="footer-grid">
       <div>
@@ -1398,10 +1437,11 @@
       <div class="footer-col">
         <h4>Páginas</h4>
         <ul>
-          <li><a href="#inicio">Início</a></li>
-          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#inicio">Home</a></li>
           <li><a href="#sobre">Nossa História</a></li>
+          <li><a href="#servicos">Serviços</a></li>
           <li><a href="#depoimentos">Avaliações</a></li>
+          <li><a href="#faq">FAQ</a></li>
           <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
@@ -1416,21 +1456,11 @@
       </div>
       <div class="footer-col">
         <h4>Contato</h4>
-        <div class="footer-contact-item">
-          📞 <a href="tel:+5511983546780">(11) 98354-6780</a>
-        </div>
-        <div class="footer-contact-item">
-          📞 <a href="tel:+5511921912023">(11) 92191-2023</a>
-        </div>
-        <div class="footer-contact-item">
-          ✉️ <a href="mailto:dogcenteripiranga@gmail.com">dogcenteripiranga@gmail.com</a>
-        </div>
-        <div class="footer-contact-item">
-          📍 Rua Antônio Marcondes, 276<br>Ipiranga, São Paulo – SP
-        </div>
-        <div class="footer-contact-item">
-          📍 Rua Bom Pastor, 2023<br>Ipiranga, São Paulo – SP
-        </div>
+        <div class="footer-contact-item">📞 <a href="tel:+5511983546780">(11) 98354-6780</a></div>
+        <div class="footer-contact-item">📞 <a href="tel:+5511921912023">(11) 92191-2023</a></div>
+        <div class="footer-contact-item">✉️ <a href="mailto:dogcenteripiranga@gmail.com">dogcenteripiranga@gmail.com</a></div>
+        <div class="footer-contact-item">📍 Rua Antônio Marcondes, 276<br>Ipiranga, São Paulo – SP</div>
+        <div class="footer-contact-item">📍 Rua Bom Pastor, 2023<br>Ipiranga, São Paulo – SP</div>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1439,14 +1469,15 @@
     </div>
   </footer>
 
-  <!-- BOTÃO VOLTAR AO TOPO -->
+  <!-- ═══════════════ ELEMENTOS FIXOS ═══════════════ -->
+  <!-- Botão voltar ao topo -->
   <button id="back-to-top" aria-label="Voltar ao topo do site" title="Voltar ao topo">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </button>
 
-  <!-- WHATSAPP FLOAT + MODAL (com números corretos) -->
+  <!-- WhatsApp float + modal -->
   <div id="whatsapp-float">
     <div id="whatsapp-modal" role="dialog" aria-modal="true" aria-label="Atendimento via WhatsApp">
       <div class="whatsapp-modal-header">
@@ -1467,9 +1498,7 @@
           <strong>💬 Outro assunto</strong> Falar diretamente com a equipe
         </button>
       </div>
-      <div class="whatsapp-modal-footer">
-        🟢 Atendimento de Terça a Sábado
-      </div>
+      <div class="whatsapp-modal-footer">🟢 Atendimento de Terça a Sábado</div>
     </div>
     <button id="whatsapp-toggle" aria-label="Abrir chat do WhatsApp" aria-expanded="false" aria-controls="whatsapp-modal">
       <span class="pulse-ring" aria-hidden="true"></span>
@@ -1479,7 +1508,7 @@
     </button>
   </div>
 
-  <!-- LGPD -->
+  <!-- Banner LGPD -->
   <div id="lgpd" role="dialog" aria-modal="true" aria-labelledby="lgpd-titulo" aria-describedby="lgpd-desc">
     <h4 id="lgpd-titulo">Privacidade &amp; Cookies</h4>
     <p id="lgpd-desc">Usamos cookies para melhorar sua experiência. Ao aceitar, você concorda com nossa Política de Privacidade conforme a LGPD.</p>
@@ -1489,8 +1518,9 @@
     </div>
   </div>
 
+  <!-- ═══════════════ SCRIPTS ═══════════════ -->
   <script>
-    // ── LGPD ──
+    // ── LGPD Consent ──
     (function(){
       if (!localStorage.getItem('dc_lgpd')) {
         document.getElementById('lgpd').style.display = 'block';
@@ -1548,11 +1578,8 @@
     // ── Back to Top ──
     const backToTopBtn = document.getElementById('back-to-top');
     window.addEventListener('scroll', () => {
-      if (window.scrollY > 600) {
-        backToTopBtn.classList.add('visible');
-      } else {
-        backToTopBtn.classList.remove('visible');
-      }
+      if (window.scrollY > 600) backToTopBtn.classList.add('visible');
+      else backToTopBtn.classList.remove('visible');
     }, { passive: true });
     backToTopBtn.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1561,15 +1588,13 @@
       }
     });
 
-    // ── WhatsApp Float + Modal (números individuais) ──
+    // ── WhatsApp Float + Modal ──
     const waToggle = document.getElementById('whatsapp-toggle');
     const waModal = document.getElementById('whatsapp-modal');
-
     waToggle.addEventListener('click', () => {
       const isOpen = waModal.classList.toggle('open');
       waToggle.setAttribute('aria-expanded', isOpen);
     });
-
     waModal.querySelectorAll('.wa-msg').forEach(btnMsg => {
       btnMsg.addEventListener('click', () => {
         const number = btnMsg.getAttribute('data-wa-number') || '5511983546780';
@@ -1579,14 +1604,12 @@
         waToggle.setAttribute('aria-expanded', 'false');
       });
     });
-
     document.addEventListener('click', (e) => {
       if (!document.getElementById('whatsapp-float').contains(e.target)) {
         waModal.classList.remove('open');
         waToggle.setAttribute('aria-expanded', 'false');
       }
     });
-
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && waModal.classList.contains('open')) {
         waModal.classList.remove('open');
@@ -1595,14 +1618,23 @@
       }
     });
 
-    // ── CARROSSEL ──
+    // ── FAQ Accordion ──
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', !expanded);
+        const answer = button.nextElementSibling;
+        answer.classList.toggle('open');
+      });
+    });
+
+    // ── Carrossel ──
     const carousel = document.getElementById('carousel-sobre');
     const track = carousel.querySelector('.carousel-track');
     const slides = Array.from(track.children);
     const prevButton = carousel.querySelector('.prev');
     const nextButton = carousel.querySelector('.next');
     const dotsContainer = carousel.querySelector('.carousel-dots');
-
     let currentSlide = 0;
     let autoplayInterval;
 
@@ -1622,30 +1654,11 @@
       dots[index].classList.add('active');
       currentSlide = index;
     }
-
-    function goToSlide(index) {
-      updateSlide(index);
-      resetAutoplay();
-    }
-
-    function nextSlide() {
-      const newIndex = (currentSlide + 1) % slides.length;
-      updateSlide(newIndex);
-    }
-
-    function prevSlide() {
-      const newIndex = (currentSlide - 1 + slides.length) % slides.length;
-      updateSlide(newIndex);
-    }
-
-    function startAutoplay() {
-      autoplayInterval = setInterval(nextSlide, 4000);
-    }
-
-    function resetAutoplay() {
-      clearInterval(autoplayInterval);
-      startAutoplay();
-    }
+    function goToSlide(index) { updateSlide(index); resetAutoplay(); }
+    function nextSlide() { const newIndex = (currentSlide + 1) % slides.length; updateSlide(newIndex); }
+    function prevSlide() { const newIndex = (currentSlide - 1 + slides.length) % slides.length; updateSlide(newIndex); }
+    function startAutoplay() { autoplayInterval = setInterval(nextSlide, 4000); }
+    function resetAutoplay() { clearInterval(autoplayInterval); startAutoplay(); }
 
     prevButton.addEventListener('click', prevSlide);
     nextButton.addEventListener('click', nextSlide);
