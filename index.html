@@ -95,7 +95,7 @@
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html { font-size: 16px; scroll-behavior: smooth; }
+    html { font-size: 16px; scroll-behavior: smooth; overflow-x: hidden; } /* evita scroll lateral */
 
     body {
       font-family: 'DM Sans', sans-serif;
@@ -103,6 +103,7 @@
       color: var(--black);
       -webkit-font-smoothing: antialiased;
       position: relative;
+      overflow-x: hidden; /* reforça */
     }
 
     /* ── ACESSIBILIDADE ── */
@@ -1273,7 +1274,19 @@
       footer { padding: 3rem 2rem 2rem; }
       #whatsapp-float { bottom: 1rem; right: 1rem; }
       #back-to-top { bottom: 80px; right: 1rem; }
+
+      /* Novas seções responsivas */
+      #numeros       { padding: 3rem 2rem; }
+      #diferenciais  { padding: 3.5rem 2rem; }
+      #timeline      { padding: 3.5rem 2rem; }
+      #seo-local     { padding: 3rem 2rem; }
+      #confianca     { padding: 2.5rem 2rem; }
+
+      .numeros-grid { grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+      .diferenciais-grid { grid-template-columns: 1fr; }
+      .confianca-grid { grid-template-columns: 1fr; }
     }
+
     @media (max-width: 600px) {
       nav { padding: .8rem 1.2rem; }
       .nav-logo img { height: 50px; } /* Ajuste fino para telas pequenas */
@@ -1282,6 +1295,18 @@
       .services-grid {
         grid-template-columns: 1fr;
       }
+
+      /* Novas seções em telas pequenas */
+      #numeros       { padding: 2.5rem 1.5rem; }
+      #diferenciais  { padding: 3rem 1.5rem; }
+      #timeline      { padding: 3rem 1.5rem; }
+      #seo-local     { padding: 2.5rem 1.5rem; }
+      #confianca     { padding: 2rem 1.5rem; }
+
+      .numeros-grid { grid-template-columns: 1fr; gap: 1rem; }
+      .timeline-wrap { padding-left: 1.5rem; }
+      .tl-item { padding-left: 1rem; }
+      .tl-item::before { left: -1.5rem; }
     }
   </style>
 
