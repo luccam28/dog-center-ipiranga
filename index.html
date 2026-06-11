@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dog Center Ipiranga – Banho, Tosa, Creche, Hotel e Veterinária no Ipiranga, São Paulo. Cuidado com amor desde 2015." />
+  <meta property="og:title" content="Dog Center Ipiranga – Cuidado com quem você ama" />
+  <meta property="og:description" content="Banho & Tosa, Creche, Hotel, Veterinária e muito mais no coração do Ipiranga." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=1200" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <link rel="icon" type="image/png" href="logo.png" />
+  <link rel="apple-touch-icon" href="logo.png" />
+  <title>Dog Center Ipiranga - Pet Shop Referência no Ipiranga</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --gold:    #F5C000;
+      --red:     #E03A2F;
+      --black:   #111110;
+      --offwhite:#FAF9F5;
+      --stone:   #F0EDE4;
+      --muted:   #6B6860;
+      --border:  #DDD9CE;
+      --radius:  14px;
+      --whatsapp:#25D366;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--offwhite);
+      color: var(--black);
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* ── ACESSIBILIDADE ── */
+    :focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* ── SKIP LINK ── */
+    .skip-link {
+      position: absolute; top: -9999px; left: 1rem;
+      background: var(--gold); color: var(--black);
+      padding: .5rem 1rem; border-radius: var(--radius);
+      font-weight: 600; z-index: 9999;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: #fff;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .9rem 2rem;
+    }
+    .nav-logo img { height: 52px; width: auto; display: block; }
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: #444; text-decoration: none;
+      font-size: .82rem; font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: color .2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0; height: 2px;
+      background: var(--gold);
+      transition: width .25s ease;
+    }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-links a[aria-current="page"] { color: var(--gold); }
+    .nav-links a[aria-current="page"]::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--red); color: #fff;
+      border: none; padding: .65rem 1.4rem;
+      border-radius: 999px; font-family: 'DM Sans', sans-serif;
+      font-weight: 600; font-size: .82rem; cursor: pointer;
+      text-decoration: none; transition: background .2s, transform .15s;
+      white-space: nowrap;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .nav-cta:hover { background: #c42f25; transform: scale(1.03); }
+
+    /* hamburger */
+    .hamburger {
+      display: none; background: none; border: none;
+      cursor: pointer; padding: .3rem; color: var(--black);
+    }
+    .hamburger svg { display: block; }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 100%; left: 0; right: 0;
+        background: #fff; padding: 1.5rem 2rem;
+        gap: 1.2rem; border-top: 1px solid var(--border);
+        box-shadow: 0 12px 32px rgba(0,0,0,.08);
+      }
+    }
+
+    /* ── HERO (COM VÍDEO) ── */
+    #inicio {
+      min-height: 100svh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 7rem 4rem 5rem;
+      gap: 3rem;
+      overflow: hidden;
+      position: relative;
+      background: #000;
+    }
+
+    .hero-video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    #inicio::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 1;
+    }
+
+    .hero-text,
+    .hero-visual,
+    .hero-scroll-hint {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-text { max-width: 560px; }
+    .hero-eyebrow {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--black);
+      font-size: .78rem; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .35rem .9rem; border-radius: 999px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2.8rem, 5vw, 4.8rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: #fff;
+    }
+    .hero-title em {
+      font-style: italic;
+      font-weight: 300;
+      color: var(--gold);
+    }
+    .hero-sub {
+      margin-top: 1.5rem;
+      color: #ddd;
+      font-size: 1.05rem;
+      line-height: 1.7;
+      max-width: 440px;
+    }
+    .hero-actions {
+      margin-top: 2.5rem;
+      display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;
+    }
+    .btn-primary {
+      background: var(--red); color: #fff;
+      padding: .85rem 2rem; border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600; font-size: 1rem;
+      text-decoration: none; border: none; cursor: pointer;
+      transition: background .2s, transform .15s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: #c42f25; transform: scale(1.03); }
+    .btn-outline {
+      background: transparent; color: #fff;
+      padding: .85rem 2rem; border-radius: 999px;
+      border: 1.5px solid #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500; font-size: 1rem;
+      text-decoration: none; cursor: pointer;
+      transition: border-color .2s, color .2s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); background: rgba(245,192,0,.15); }
+
+    .hero-social-proof {
+      margin-top: 2.5rem;
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .stars { color: var(--gold); font-size: 1.1rem; letter-spacing: .05em; }
+    .hero-social-proof p { font-size: .85rem; color: #ccc; line-height: 1.4; }
+    .hero-social-proof strong { color: #fff; }
+
+    .hero-visual {
+      position: relative;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .hero-badge-wrap {
+      position: relative;
+      width: 420px; height: 420px;
+    }
+    .hero-circle {
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      background: rgba(240,237,228,0.15);
+      backdrop-filter: blur(8px);
+      border: 2px solid rgba(255,255,255,0.2);
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      overflow: hidden;
+    }
+    .hero-circle img {
+      width: 100%; height: 100%;
+      object-fit: cover; opacity: .85;
+    }
+    .hero-float-card {
+      position: absolute;
+      background: var(--gold);
+      border-radius: var(--radius);
+      padding: .8rem 1.2rem;
+      font-family: 'Fraunces', serif;
+      display: flex; flex-direction: column;
+      animation: floatY 5s ease-in-out infinite;
+      box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    }
+    .hero-float-card .num {
+      font-size: 1.6rem; font-weight: 900; color: var(--black); line-height: 1;
+    }
+    .hero-float-card .lbl {
+      font-size: .7rem; font-weight: 300; color: #444; letter-spacing: .05em;
+    }
+    .card-anos { bottom: 24px; left: -20px; }
+    .card-nota { top: 28px; right: -20px; }
+    @keyframes floatY {
+      0%, 100% { transform: translateY(0); }
+      50%       { transform: translateY(-10px); }
+    }
+
+    .hero-scroll-hint {
+      position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      text-decoration: none; opacity: .7; transition: opacity .2s;
+    }
+    .hero-scroll-hint:hover { opacity: 1; }
+    .hero-scroll-hint span {
+      display: block; width: 20px; height: 20px;
+      border-right: 2px solid #fff; border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+      animation: scrollBounce 1.6s ease-in-out infinite;
+    }
+    @keyframes scrollBounce {
+      0%, 100% { transform: rotate(45deg) translateY(0); }
+      50%       { transform: rotate(45deg) translateY(5px); }
+    }
+
+    .paw-divider {
+      display: flex; align-items: center; gap: 1rem;
+      margin: 0 auto 1rem;
+      color: var(--muted); font-size: .78rem; text-transform: uppercase;
+      letter-spacing: .12em; max-width: 1200px;
+    }
+    .paw-divider::before, .paw-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--border);
+    }
+
+    /* ── SERVIÇOS ── */
+    #servicos {
+      background: var(--stone);
+      padding: 5rem 4rem;
+    }
+    .section-header { text-align: center; margin-bottom: 3.5rem; }
+    .section-eyebrow {
+      font-size: .78rem; font-weight: 600; text-transform: uppercase;
+      letter-spacing: .12em; color: var(--red); margin-bottom: .7rem;
+    }
+    .section-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900; line-height: 1.15;
+    }
+    .section-title em { font-style: italic; font-weight: 300; color: var(--muted); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .service-card {
+      background: #fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid var(--border);
+      transition: transform .2s, box-shadow .2s;
+      position: relative; overflow: hidden;
+    }
+    .service-card::after {
+      content: ''; position: absolute;
+      bottom: 0; left: 0; right: 0; height: 4px;
+      background: var(--gold); transform: scaleX(0);
+      transform-origin: left; transition: transform .3s;
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.09); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon {
+      font-size: 2.2rem; margin-bottom: 1rem; display: block;
+      line-height: 1;
+    }
+    .service-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.25rem; font-weight: 700; margin-bottom: .6rem;
+    }
+    .service-card p { font-size: .92rem; color: var(--muted); line-height: 1.65; }
+
+    /* ── SOBRE / DESTAQUES ── */
+    #sobre {
+      background: var(--offwhite);
+      padding: 5rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem; align-items: center;
+      max-width: 100%;
+    }
+    .sobre-text .section-eyebrow { color: var(--gold); }
+    .sobre-title {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3vw, 2.8rem);
+      font-weight: 900; color: var(--black); line-height: 1.15;
+      margin: .5rem 0 1.2rem;
+    }
+    .sobre-title em { font-style: italic; font-weight: 300; color: var(--gold); }
+    .sobre-body { color: var(--muted); line-height: 1.8; font-size: .97rem; }
+    .sobre-body + .sobre-body { margin-top: 1rem; }
+
+    .sobre-stats {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin-top: 2.5rem;
+    }
+    .stat-box {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem;
+    }
+    .stat-box .num {
+      font-family: 'Fraunces', serif;
+      font-size: 2.2rem; font-weight: 900;
+      color: var(--red); line-height: 1;
+    }
+    .stat-box .lbl {
+      font-size: .82rem; color: var(--muted); margin-top: .3rem;
+    }
+
+    .sobre-visual {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .carousel {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .carousel-track {
+      display: flex;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+    .carousel-slide {
+      min-width: 100%;
+      height: 100%;
+    }
+    .carousel-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.5);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 0.6rem 1rem;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      z-index: 10;
+      transition: background 0.2s;
+    }
+    .carousel-btn:hover {
+      background: rgba(0,0,0,0.8);
+    }
+    .carousel-btn.prev { left: 8px; }
+    .carousel-btn.next { right: 8px; }
+    .carousel-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 10;
+    }
+    .carousel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .carousel-dot.active {
+      background: var(--gold);
+    }
+    .sobre-tag {
+      position: absolute; top: 16px; right: 16px;
+      background: var(--red);
+      color: #fff; font-weight: 600; font-size: .85rem;
+      padding: .5rem 1rem; border-radius: 999px;
+      z-index: 15;
+      pointer-events: none;
+    }
+
+    /* ── CTA INTERMEDIÁRIO ── */
+    #cta-meio {
+      background: var(--stone);
+      padding: 4rem;
+      display: flex; align-items: center;
+      gap: 3rem; max-width: 100%;
+      flex-wrap: wrap;
+    }
+    .cta-meio-badge {
+      background: var(--black);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      flex: 0 0 260px;
+      text-align: center;
+    }
+    .cta-meio-badge .paw-icon {
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+      color: var(--gold);
+    }
+    .cta-meio-badge .tag {
+      background: var(--red); color: #fff;
+      font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+      text-transform: uppercase; padding: .3rem .8rem;
+      border-radius: 999px; display: inline-block; margin-bottom: .8rem;
+    }
+    .cta-meio-badge h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.1rem; font-weight: 700; color: #fff;
+    }
+    .cta-meio-content { flex: 1; min-width: 260px; }
+    .cta-meio-content h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+      font-weight: 900; line-height: 1.2; margin-bottom: 1rem;
+    }
+    .cta-meio-content p { color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem; }
+    .cta-meio-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--red); color: #fff;
+      padding: .85rem 2rem; border-radius: 999px;
+      font-weight: 600; text-decoration: none;
+      font-size: .95rem; transition: background .2s, gap .2s;
+    }
+    .cta-meio-link:hover {
+      background: #c42f25;
+      gap: .8rem;
+    }
+
+    /* ── DEPOIMENTOS ── */
+    #depoimentos {
+      padding: 5rem 4rem;
+      background: var(--offwhite);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem; max-width: 1200px; margin: 0 auto;
+    }
+    .review-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+    .review-stars { color: var(--gold); font-size: 1rem; margin-bottom: .9rem; }
+    .review-text { font-size: .93rem; color: #444; line-height: 1.7; margin-bottom: 1.2rem; }
+    .review-author { display: flex; align-items: center; gap: .8rem; }
+    .avatar {
+      width: 40px; height: 40px; border-radius: 50%;
+      background: var(--stone); display: flex; align-items: center;
+      justify-content: center; font-weight: 700; font-size: .85rem;
+      color: var(--black); flex-shrink: 0;
+    }
+    .review-author .name { font-weight: 600; font-size: .88rem; }
+    .review-author .pet  { font-size: .8rem; color: var(--muted); }
+
+    /* ── CONTATO / UNIDADES ── */
+    #contato {
+      background: var(--stone);
+      padding: 5rem 4rem;
+    }
+    #contato .section-header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+    #contato .section-header h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 900; line-height: 1.15;
+    }
+    #contato .section-header p {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-top: .8rem;
+    }
+    .units-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 2.5rem;
+      max-width: 1200px;
+      margin: 0 auto 3rem;
+    }
+    .unit-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+      display: flex;
+      flex-direction: column;
+    }
+    .unit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0,0,0,.10);
+    }
+    .map-container {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-bottom: 2px solid var(--gold);
+    }
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+    .unit-info {
+      padding: 1.5rem 1.8rem 1.8rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+    .unit-badge {
+      display: inline-block;
+      background: var(--red);
+      color: #fff;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .3rem .75rem;
+      border-radius: 999px;
+      align-self: flex-start;
+      margin-bottom: .3rem;
+    }
+    .unit-info h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .unit-info p {
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.55;
+    }
+    .unit-info p strong {
+      color: var(--black);
+    }
+    .unit-info .unit-actions {
+      margin-top: auto;
+      padding-top: 1rem;
+      display: flex;
+      gap: .8rem;
+      flex-wrap: wrap;
+    }
+    .unit-info .unit-actions a {
+      font-size: .82rem;
+      font-weight: 600;
+      text-decoration: none;
+      padding: .55rem 1.2rem;
+      border-radius: 999px;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .unit-btn-waze {
+      background: #5C9DFF;
+      color: #fff;
+    }
+    .unit-btn-waze:hover {
+      background: #4A8AE8;
+      transform: scale(1.03);
+    }
+
+    .contato-extra {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .contato-info-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+    }
+    .contato-info-card h3 {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--black);
+    }
+    .info-list { list-style: none; display: flex; flex-direction: column; gap: .8rem; }
+    .info-list li {
+      display: flex; align-items: center; gap: .6rem;
+      color: var(--muted); font-size: .9rem; line-height: 1.5;
+    }
+    .info-list .icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--stone);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: .9rem;
+    }
+    .info-list a { color: var(--red); text-decoration: none; font-weight: 500; }
+    .info-list a:hover { text-decoration: underline; }
+
+    .horario-grid {
+      margin-top: 1rem;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .4rem 1.5rem;
+    }
+    .horario-item { font-size: .85rem; color: var(--muted); }
+    .horario-item strong { color: var(--black); }
+
+    /* ── CTA FINAL ── */
+    #cta {
+      background: var(--gold);
+      padding: 5rem 4rem;
+      text-align: center;
+    }
+    #cta h2 {
+      font-family: 'Fraunces', serif;
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900; color: var(--black);
+      line-height: 1.1; margin-bottom: 1rem;
+    }
+    #cta h2 em { font-style: italic; font-weight: 300; }
+    #cta p { color: #4a4030; font-size: 1.05rem; margin-bottom: 2.5rem; }
+    .cta-actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-dark {
+      background: var(--black); color: #fff;
+      padding: .9rem 2.2rem; border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600; font-size: 1rem;
+      text-decoration: none; display: inline-block;
+      transition: background .2s, transform .15s;
+    }
+    .btn-dark:hover { background: #2a2a28; transform: scale(1.03); }
+    .btn-ghost {
+      background: transparent; color: var(--black);
+      padding: .9rem 2.2rem; border-radius: 999px;
+      border: 2px solid var(--black);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500; font-size: 1rem;
+      text-decoration: none; display: inline-block;
+      transition: background .2s;
+    }
+    .btn-ghost:hover { background: rgba(0,0,0,.08); }
+
+    /* ── BACK TO TOP ── */
+    #back-to-top {
+      position: fixed;
+      bottom: 100px;
+      right: 1.5rem;
+      z-index: 90;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--black);
+      color: #fff;
+      border: 2px solid #333;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(10px);
+      transition: opacity .3s, visibility .3s, transform .3s, background .2s;
+      box-shadow: 0 4px 16px rgba(0,0,0,.25);
+    }
+    #back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    #back-to-top:hover {
+      background: var(--red);
+      border-color: var(--red);
+      transform: translateY(-2px);
+    }
+    #back-to-top svg {
+      width: 18px;
+      height: 18px;
+      pointer-events: none;
+    }
+
+    /* ── WHATSAPP FLOAT + MODAL ── */
+    #whatsapp-float {
+      position: fixed;
+      bottom: 1.5rem;
+      right: 1.5rem;
+      z-index: 95;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: .8rem;
+    }
+    #whatsapp-toggle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .4);
+      transition: transform .2s, box-shadow .2s;
+      position: relative;
+    }
+    #whatsapp-toggle:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 32px rgba(37, 211, 102, .55);
+    }
+    #whatsapp-toggle svg {
+      width: 28px;
+      height: 28px;
+    }
+    #whatsapp-toggle .pulse-ring {
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 3px solid var(--whatsapp);
+      opacity: .35;
+      animation: pulse-ring 2s ease-out infinite;
+      pointer-events: none;
+    }
+    @keyframes pulse-ring {
+      0%   { transform: scale(1); opacity: .4; }
+      100% { transform: scale(1.6); opacity: 0; }
+    }
+
+    #whatsapp-modal {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      border-radius: var(--radius);
+      box-shadow: 0 12px 40px rgba(0,0,0,.18);
+      width: 300px;
+      overflow: hidden;
+      animation: fadeInUp .25s ease;
+    }
+    #whatsapp-modal.open {
+      display: flex;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .whatsapp-modal-header {
+      background: var(--whatsapp);
+      color: #fff;
+      padding: 1rem 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+    }
+    .whatsapp-modal-header .wa-avatar {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .whatsapp-modal-header .wa-info .wa-name {
+      font-weight: 700; font-size: .95rem; line-height: 1.2;
+    }
+    .whatsapp-modal-header .wa-info .wa-status {
+      font-size: .72rem; opacity: .85;
+    }
+    .whatsapp-modal-body {
+      padding: 1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+    .whatsapp-modal-body .wa-msg {
+      background: #f0f0f0;
+      border-radius: 12px;
+      padding: .7rem .9rem;
+      font-size: .85rem;
+      color: #333;
+      cursor: pointer;
+      transition: background .2s;
+      border: none;
+      text-align: left;
+      font-family: 'DM Sans', sans-serif;
+      line-height: 1.4;
+    }
+    .whatsapp-modal-body .wa-msg:hover {
+      background: #e4e4e4;
+    }
+    .whatsapp-modal-body .wa-msg strong {
+      display: block;
+      font-size: .75rem;
+      color: var(--red);
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      margin-bottom: .2rem;
+    }
+    .whatsapp-modal-footer {
+      padding: .7rem 1.2rem;
+      border-top: 1px solid #eee;
+      font-size: .7rem;
+      color: #999;
+      text-align: center;
+    }
+
+    /* ── LGPD MODAL ── */
+    #lgpd {
+      position: fixed; bottom: 1.5rem; left: 1.5rem; right: 1.5rem;
+      max-width: 460px; z-index: 200;
+      background: var(--black); color: #ccc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1.5rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,.4);
+      display: none;
+    }
+    #lgpd h4 { color: #fff; font-size: 1rem; margin-bottom: .5rem; }
+    #lgpd p  { font-size: .83rem; line-height: 1.6; margin-bottom: 1rem; }
+    .lgpd-btns { display: flex; gap: .7rem; }
+    .lgpd-btns button {
+      flex: 1; padding: .6rem; border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600; font-size: .85rem; cursor: pointer;
+      border: none; transition: opacity .2s;
+    }
+    .lgpd-btns button:hover { opacity: .85; }
+    .btn-aceitar { background: var(--gold); color: var(--black); }
+    .btn-recusar { background: #222; color: #aaa; }
+
+    /* ── SCROLL REVEAL ── */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--black);
+      color: #ccc;
+      padding: 4rem 4rem 2rem;
+      border-top: 1px solid #2a2a28;
+    }
+    .footer-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 3rem;
+    }
+    .footer-col h4 {
+      font-family: 'Fraunces', serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .7rem;
+    }
+    .footer-col a {
+      color: #888;
+      text-decoration: none;
+      font-size: .85rem;
+      font-weight: 500;
+      transition: color .2s;
+    }
+    .footer-col a:hover { color: var(--gold); }
+    .footer-logo {
+      display: block;
+      width: 120px;
+      margin-bottom: 1rem;
+    }
+    .footer-desc {
+      font-size: .85rem;
+      color: #888;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .footer-social {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-social a {
+      color: #888;
+      font-size: 1.2rem;
+      transition: color .2s;
+      text-decoration: none;
+    }
+    .footer-social a:hover { color: var(--gold); }
+    .footer-contact-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: #888;
+      font-size: .85rem;
+      line-height: 1.6;
+      margin-bottom: .5rem;
+    }
+    .footer-contact-item a { color: #888; }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding-top: 2rem;
+      border-top: 1px solid #2a2a28;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: .78rem;
+      color: #666;
+    }
+    .footer-bottom a {
+      color: #888;
+      text-decoration: none;
+    }
+    .footer-bottom a:hover { color: var(--gold); }
+    @media (max-width: 900px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #inicio, #sobre {
+        grid-template-columns: 1fr;
+        padding: 6rem 2rem 3rem;
+      }
+      #contato { padding: 4rem 2rem; }
+      .units-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .contato-extra {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-badge-wrap { width: 300px; height: 300px; }
+      .hero-circle { width: 280px; height: 280px; }
+      .card-anos { bottom: 12px; left: 0; }
+      .card-nota { top: 12px; right: 0; }
+      #servicos, #cta-meio, #depoimentos, #cta { padding: 3.5rem 2rem; }
+      #cta-meio { flex-direction: column; }
+      footer { padding: 3rem 2rem 2rem; }
+      #whatsapp-float { bottom: 1rem; right: 1rem; }
+      #back-to-top { bottom: 80px; right: 1rem; }
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (max-width: 600px) {
+      nav { padding: .8rem 1.2rem; }
+      .nav-logo img { height: 42px; }
+      .stat-box .num { font-size: 1.7rem; }
+      #whatsapp-modal { width: 260px; }
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#inicio" class="skip-link">Pular para o conteúdo principal</a>
+
+  <!-- NAV -->
+  <nav role="navigation" aria-label="Navegação principal">
+    <div class="nav-logo">
+      <a href="index.html" aria-label="Dog Center Ipiranga – página inicial">
+        <img src="logo.png" alt="Dog Center Ipiranga" />
+      </a>
+    </div>
+    <ul class="nav-links" id="nav-menu" role="list">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#sobre">Nossa História</a></li>
+      <li><a href="#depoimentos">Avaliações</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+    <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="nav-cta" aria-label="Agendar via WhatsApp">Agendar</a>
+    <button class="hamburger" aria-label="Abrir menu" aria-controls="nav-menu" aria-expanded="false" id="hamburger-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- HERO (COM VÍDEO DE FUNDO) -->
+  <section id="inicio" aria-label="Introdução">
+    <video autoplay muted loop playsinline class="hero-video-bg">
+      <source src="video.mp4" type="video/mp4" />
+      Seu navegador não suporta vídeos HTML5.
+    </video>
+
+    <div class="hero-text reveal">
+      <span class="hero-eyebrow" aria-label="Destaque">Duas Unidades em Funcionamento 🐾</span>
+      <h1 class="hero-title">
+        Cuidado com<br><em>quem você</em><br>mais ama.
+      </h1>
+      <p class="hero-sub">
+        Banho, tosa, creche, hotel e suporte veterinário — tudo com o carinho que o Eduardo e a Sheila dedicam há anos ao seu melhor amigo.
+      </p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-primary" aria-label="Agendar serviço via WhatsApp">Agendar agora</a>
+        <a href="#servicos" class="btn-outline">Ver serviços</a>
+      </div>
+      <div class="hero-social-proof" aria-label="Avaliações dos clientes">
+        <span class="stars" aria-label="4,9 estrelas">★★★★★</span>
+        <p><strong>4,9 no Google</strong><br>+500 tutores satisfeitos</p>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" aria-hidden="true">
+      <div class="hero-badge-wrap">
+        <div class="hero-circle">
+          <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?auto=format&fit=crop&q=80&w=600" alt="Cão feliz sendo cuidado no Dog Center" />
+        </div>
+        <div class="hero-float-card card-anos">
+          <span class="num">8+</span>
+          <span class="lbl">anos cuidando</span>
+        </div>
+        <div class="hero-float-card card-nota">
+          <span class="num">4,9 ⭐</span>
+          <span class="lbl">avaliação média</span>
+        </div>
+      </div>
+    </div>
+    <a href="#servicos" class="hero-scroll-hint" aria-label="Rolar para ver os serviços">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" aria-labelledby="servicos-titulo">
+    <div class="paw-divider" aria-hidden="true">🐾 nossos serviços 🐾</div>
+    <div class="section-header reveal">
+      <p class="section-eyebrow">O que oferecemos</p>
+      <h2 class="section-title" id="servicos-titulo">Tudo que o seu pet<br><em>precisa em um lugar</em></h2>
+    </div>
+    <div class="services-grid" role="list">
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🛁</span>
+        <h3>Banho &amp; Tosa</h3>
+        <p>Produtos de qualidade premium, água na temperatura ideal e mãos experientes que tratam seu pet com paciência e amor.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🏡</span>
+        <h3>Creche &amp; Hotel</h3>
+        <p>Ambiente acolhedor, monitoramento constante e rotina personalizada. Seu pet fica em ótimas mãos enquanto você trabalha ou viaja.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🩺</span>
+        <h3>Apoio Veterinário</h3>
+        <p>Encaminhamos para clínicas de confiança e trabalhamos em parceria com veterinários da região para garantir saúde e bem-estar completos ao seu companheiro.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🚗</span>
+        <h3>Táxi Dog</h3>
+        <p>Busca e entrega com segurança, conforto e carinho. Seu pet chega ao Dog Center relaxado e pronto para ser mimado.</p>
+      </article>
+      <article class="service-card reveal" role="listitem">
+        <span class="service-icon" aria-hidden="true">🛍️</span>
+        <h3>Pet Shop</h3>
+        <p>Ração, acessórios, brinquedos e produtos de higiene dos melhores fabricantes, à disposição na nossa loja física.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- SOBRE (TEXTO RESUMIDO) -->
+  <section id="sobre" aria-labelledby="sobre-titulo">
+    <div class="sobre-text reveal">
+      <p class="section-eyebrow">Nossa história</p>
+      <h2 class="sobre-title" id="sobre-titulo">
+        Começou com<br><em>amor por cães</em><br>e não parou mais.
+      </h2>
+      <p class="sobre-body">
+        Desde 2015, a Dog Center Ipiranga transforma o cuidado pet no bairro. Criada por Eduardo e Sheila, a empresa se tornou uma das mais bem avaliadas da região — cada pet é tratado como família, com carinho e responsabilidade em todos os serviços: banho, tosa, estética, creche, hotel e cuidados veterinários.
+      </p>
+      <p class="sobre-body">
+        Hoje são duas unidades no Ipiranga, com estrutura moderna, equipe capacitada e um novo momento de expansão: consultório veterinário próprio, espaços ampliados e tecnologia para oferecer o melhor para os pets e tranquilidade para os tutores.
+      </p>
+      <div class="sobre-stats" aria-label="Números do Dog Center">
+        <div class="stat-box">
+          <p class="num">8+</p>
+          <p class="lbl">anos de experiência</p>
+        </div>
+        <div class="stat-box">
+          <p class="num">4,9★</p>
+          <p class="lbl">avaliação no Google</p>
+        </div>
+        <div class="stat-box">
+          <p class="num">500+</p>
+          <p class="lbl">tutores atendidos</p>
+        </div>
+        <div class="stat-box">
+          <p class="num">2</p>
+          <p class="lbl">unidades (em breve)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sobre-visual reveal" aria-hidden="true">
+      <div class="carousel" id="carousel-sobre">
+        <div class="carousel-track">
+          <div class="carousel-slide"><img src="img1.png" alt="Dog Center Ipiranga – imagem 1" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="img2.png" alt="Dog Center Ipiranga – imagem 2" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="img3.png" alt="Dog Center Ipiranga – imagem 3" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="img4.png" alt="Dog Center Ipiranga – imagem 4" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="img5.png" alt="Dog Center Ipiranga – imagem 5" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="img6.png" alt="Dog Center Ipiranga – imagem 6" loading="lazy" /></div>
+          <div class="carousel-slide"><img src="img7.png" alt="Dog Center Ipiranga – imagem 7" loading="lazy" /></div>
+        </div>
+        <button class="carousel-btn prev" aria-label="Imagem anterior">&#10094;</button>
+        <button class="carousel-btn next" aria-label="Próxima imagem">&#10095;</button>
+        <div class="carousel-dots"></div>
+      </div>
+      <span class="sobre-tag">Ipiranga, SP</span>
+    </div>
+  </section>
+
+  <!-- CTA INTERMEDIÁRIO -->
+  <section id="cta-meio" aria-labelledby="cta-meio-titulo">
+    <div class="cta-meio-badge reveal" aria-hidden="true">
+      <div class="paw-icon">🐾</div>
+      <span class="tag">Saúde em dia</span>
+      <h3>Check-up e bem-estar</h3>
+    </div>
+    <div class="cta-meio-content reveal">
+      <h2 id="cta-meio-titulo">
+        Seu pet merece cuidado completo,<br>do banho à saúde.
+      </h2>
+      <p>
+        No Dog Center Ipiranga, além do carinho diário, orientamos você sobre os melhores cuidados veterinários. Agende uma avaliação e garanta que seu amigo esteja sempre feliz e protegido.
+      </p>
+      <a
+        href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20check-up%20para%20meu%20pet."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="cta-meio-link"
+        aria-label="Agendar check-up pelo WhatsApp"
+      >
+        Quero um check-up
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+          <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section id="depoimentos" aria-labelledby="depoimentos-titulo">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">O que dizem os tutores</p>
+      <h2 class="section-title" id="depoimentos-titulo">Quem veio, <em>voltou</em>.</h2>
+    </div>
+    <div class="reviews-grid">
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="review-text">"O melhor petshop do Ipiranga. O atendimento é maravilhoso — o problema é que às vezes o cãozinho não quer voltar pra casa de tão mimado pelos tratadores."</p>
+        <div class="review-author">
+          <div class="avatar" aria-hidden="true">AC</div>
+          <div><p class="name">Ana Carolina</p><p class="pet">Tutora do Bolinha</p></div>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="review-text">"Conheci o Eduardo em 2015 e desde então ele cuida da minha Lolla. Muito legal ver o quanto ele evoluiu profissionalmente. Este ano farão 8 anos juntos!"</p>
+        <div class="review-author">
+          <div class="avatar" aria-hidden="true">MF</div>
+          <div><p class="name">Mariana F.</p><p class="pet">Tutora da Lolla</p></div>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="review-text">"Tenho um schnauzer de 5 anos e desde que encontrei o Eduardo, nunca precisei trocar. Já faz 3 anos! O Dom tem muito pelo e sempre sai impecável."</p>
+        <div class="review-author">
+          <div class="avatar" aria-hidden="true">RC</div>
+          <div><p class="name">Rodrigo C.</p><p class="pet">Tutor do Dom</p></div>
+        </div>
+      </article>
+      <article class="review-card reveal">
+        <div class="review-stars" aria-label="5 estrelas">★★★★★</div>
+        <p class="review-text">"Minha experiência foi maravilhosa. O Eduardo cuidou da Bela com toda atenção e carinho — ela é adotada, medrosa, e se sentiu completamente segura."</p>
+        <div class="review-author">
+          <div class="avatar" aria-hidden="true">PL</div>
+          <div><p class="name">Patrícia L.</p><p class="pet">Tutora da Bela</p></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTATO / DUAS UNIDADES -->
+  <section id="contato" aria-labelledby="contato-titulo">
+    <div class="section-header reveal">
+      <p class="section-eyebrow">Onde nos encontrar</p>
+      <h2 id="contato-titulo">Duas unidades preparadas<br>para melhor atender a região do Ipiranga.</h2>
+      <p>Visite a unidade mais próxima ou entre em contato pelo WhatsApp.</p>
+    </div>
+
+    <div class="units-grid">
+      <article class="unit-card reveal">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8!2d-46.606!3d-23.588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Ant%C3%B4nio+Marcondes%2C+276%2C+Ipiranga%2C+S%C3%A3o+Paulo!5e0!3m2!1spt!2sbr!4v1234567890"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa Unidade 1 – Rua Antônio Marcondes, 276"
+          ></iframe>
+        </div>
+        <div class="unit-info">
+          <span class="unit-badge">Loja 1 – Pet Shop</span>
+          <h3>Unidade Antônio Marcondes</h3>
+          <p>Rua Antônio Marcondes, 276 – Ipiranga</p>
+          <p><strong>Foco:</strong> Banho, Tosa e Boutique Pet.</p>
+          <div class="unit-actions">
+            <a href="https://wa.me/5511983546780?text=Olá!%20Vim%20pelo%20site,%20gostaria%20de%20agendar%20um%20serviço%20na%20Unidade%20Antônio%20Marcondes." class="unit-btn-waze" aria-label="Agendar Unidade 1 via WhatsApp">📞 Agendar Unidade 1</a>
+          </div>
+        </div>
+      </article>
+      <article class="unit-card reveal">
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.4!2d-46.608!3d-23.595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sRua+Bom+Pastor%2C+2023%2C+Ipiranga%2C+S%C3%A3o+Paulo!5e0!3m2!1spt!2sbr!4v1234567891"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Mapa Unidade 2 – Rua Bom Pastor, 2023"
+          ></iframe>
+        </div>
+        <div class="unit-info">
+          <span class="unit-badge">Loja 2 – Clínica Veterinária</span>
+          <h3>Unidade Bom Pastor</h3>
+          <p>Rua Bom Pastor, 2023 – Ipiranga</p>
+          <p><strong>Foco:</strong> Clínica, Estética e Suporte Médico.</p>
+          <div class="unit-actions">
+            <a href="https://wa.me/5511921912023?text=Olá!%20Vim%20pelo%20site,%20gostaria%20de%20saber%20mais%20sobre%20a%20Unidade%20Bom%20Pastor." class="unit-btn-waze" aria-label="Agendar Unidade 2 via WhatsApp">📞 Agendar Unidade 2</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="contato-extra reveal">
+      <div class="contato-info-card">
+        <h3>📋 Contato direto</h3>
+        <ul class="info-list">
+          <li><span class="icon" aria-hidden="true">📞</span><span><a href="tel:+5511983546780">(11) 98354-6780 - Unidade 1</a></span></li>
+          <li><span class="icon" aria-hidden="true">📞</span><span><a href="tel:+5511921912023">(11) 92191-2023 - Unidade 2</a></span></li>
+          <li><span class="icon" aria-hidden="true">📸</span><span><a href="https://www.instagram.com/dogcenteripiranga/" target="_blank" rel="noopener noreferrer">@dogcenteripiranga</a></span></li>
+          <li><span class="icon" aria-hidden="true">✉️</span><span><a href="mailto:dogcenteripiranga@gmail.com">dogcenteripiranga@gmail.com</a></span></li>
+        </ul>
+      </div>
+      <div class="contato-info-card">
+        <h3>🕐 Horários de funcionamento</h3>
+        <div class="horario-grid">
+          <div class="horario-item"><strong>Terça a Sexta</strong><br>09h às 18h</div>
+          <div class="horario-item"><strong>Sábado</strong><br>09h às 18h</div>
+          <div class="horario-item"><strong>Segunda</strong><br>Fechado</div>
+          <div class="horario-item"><strong>Domingo</strong><br>Fechado</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section id="cta" aria-labelledby="cta-titulo">
+    <h2 id="cta-titulo">Seu pet merece<br><em>o melhor cuidado.</em></h2>
+    <p>Agende agora pelo WhatsApp ou nos siga no Instagram para acompanhar as novidades da Unidade 2.</p>
+    <div class="cta-actions">
+      <a href="https://wa.me/5511983546780?text=Olá!%20Gostaria%20de%20agendar%20um%20serviço." class="btn-dark" aria-label="Agendar pelo WhatsApp">Agendar pelo WhatsApp</a>
+      <a href="https://www.instagram.com/dogcenteripiranga/" target="_blank" rel="noopener noreferrer" class="btn-ghost" aria-label="Seguir no Instagram (abre nova aba)">Seguir no Instagram</a>
+    </div>
+  </section>
+
+  <!-- FOOTER (DESCRIÇÃO RESUMIDA) -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div>
+        <img src="logo.png" alt="Dog Center Ipiranga" class="footer-logo" style="filter: brightness(0) invert(1);" />
+        <p class="footer-desc">
+          Há mais de 10 anos como referência em banho e tosa, estética animal, hospedagem, creche e cuidados veterinários no Ipiranga. Um lugar onde os pets são tratados como família.
+        </p>
+        <div class="footer-social">
+          <a href="https://www.instagram.com/dogcenteripiranga/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">📸</a>
+          <a href="https://wa.me/5511983546780" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Páginas</h4>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#sobre">Nossa História</a></li>
+          <li><a href="#depoimentos">Avaliações</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacidade.html">Privacidade</a></li>
+          <li><a href="termos.html">Termos de Uso</a></li>
+          <li><a href="cookies.html">Política de Cookies</a></li>
+          <li><a href="lgpd.html">LGPD</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contato</h4>
+        <div class="footer-contact-item">
+          📞 <a href="tel:+5511983546780">(11) 98354-6780</a>
+        </div>
+        <div class="footer-contact-item">
+          📞 <a href="tel:+5511921912023">(11) 92191-2023</a>
+        </div>
+        <div class="footer-contact-item">
+          ✉️ <a href="mailto:dogcenteripiranga@gmail.com">dogcenteripiranga@gmail.com</a>
+        </div>
+        <div class="footer-contact-item">
+          📍 Rua Antônio Marcondes, 276<br>Ipiranga, São Paulo – SP
+        </div>
+        <div class="footer-contact-item">
+          📍 Rua Bom Pastor, 2023<br>Ipiranga, São Paulo – SP
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dog Center Ipiranga. Todos os direitos reservados.</p>
+      <p>Desenvolvido com ❤️ 🐾 por <a href="https://www.redesigner.com.br" target="_blank" rel="noopener noreferrer">REDESIGNER PPM</a></p>
+    </div>
+  </footer>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="back-to-top" aria-label="Voltar ao topo do site" title="Voltar ao topo">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- WHATSAPP FLOAT + MODAL (com números corretos) -->
+  <div id="whatsapp-float">
+    <div id="whatsapp-modal" role="dialog" aria-modal="true" aria-label="Atendimento via WhatsApp">
+      <div class="whatsapp-modal-header">
+        <div class="wa-avatar">🐾</div>
+        <div class="wa-info">
+          <div class="wa-name">Dog Center Ipiranga</div>
+          <div class="wa-status">Responde em até 15 min</div>
+        </div>
+      </div>
+      <div class="whatsapp-modal-body">
+        <button class="wa-msg" data-wa-number="5511983546780" data-wa-msg="Olá! Gostaria de agendar um Banho & Tosa para o meu pet. 🛁" aria-label="Agendar Banho e Tosa">
+          <strong>🛁 Banho & Tosa</strong> Agendar horário para tosa completa
+        </button>
+        <button class="wa-msg" data-wa-number="5511921912023" data-wa-msg="Olá! Gostaria de saber mais sobre a Unidade 2 (Bom Pastor). 🏥" aria-label="Saber sobre Unidade 2">
+          <strong>🏥 Unidade Bom Pastor</strong> Informações sobre a nova unidade
+        </button>
+        <button class="wa-msg" data-wa-number="5511983546780" data-wa-msg="Olá! Gostaria de saber mais sobre os serviços do Dog Center." aria-label="Outros assuntos">
+          <strong>💬 Outro assunto</strong> Falar diretamente com a equipe
+        </button>
+      </div>
+      <div class="whatsapp-modal-footer">
+        🟢 Atendimento de Terça a Sábado
+      </div>
+    </div>
+    <button id="whatsapp-toggle" aria-label="Abrir chat do WhatsApp" aria-expanded="false" aria-controls="whatsapp-modal">
+      <span class="pulse-ring" aria-hidden="true"></span>
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- LGPD -->
+  <div id="lgpd" role="dialog" aria-modal="true" aria-labelledby="lgpd-titulo" aria-describedby="lgpd-desc">
+    <h4 id="lgpd-titulo">Privacidade &amp; Cookies</h4>
+    <p id="lgpd-desc">Usamos cookies para melhorar sua experiência. Ao aceitar, você concorda com nossa Política de Privacidade conforme a LGPD.</p>
+    <div class="lgpd-btns">
+      <button class="btn-aceitar" onclick="aceitarLGPD()">Aceitar</button>
+      <button class="btn-recusar" onclick="recusarLGPD()">Recusar</button>
+    </div>
+  </div>
+
+  <script>
+    // ── LGPD ──
+    (function(){
+      if (!localStorage.getItem('dc_lgpd')) {
+        document.getElementById('lgpd').style.display = 'block';
+      }
+    })();
+    function aceitarLGPD() {
+      localStorage.setItem('dc_lgpd', 'accepted');
+      document.getElementById('lgpd').style.display = 'none';
+    }
+    function recusarLGPD() {
+      localStorage.setItem('dc_lgpd', 'declined');
+      document.getElementById('lgpd').style.display = 'none';
+    }
+
+    // ── Hamburger Menu ──
+    const btn = document.getElementById('hamburger-btn');
+    const menu = document.getElementById('nav-menu');
+    btn.addEventListener('click', function(){
+      const open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open);
+    });
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // ── Scroll Reveal ──
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(r => io.observe(r));
+
+    // ── Active nav on scroll ──
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 120) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.removeAttribute('aria-current');
+        if (a.getAttribute('href') === '#' + current) a.setAttribute('aria-current', 'page');
+      });
+    }, { passive: true });
+
+    // ── Back to Top ──
+    const backToTopBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 600) {
+        backToTopBtn.classList.add('visible');
+      } else {
+        backToTopBtn.classList.remove('visible');
+      }
+    }, { passive: true });
+    backToTopBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (!('scrollBehavior' in document.documentElement.style)) {
+        document.getElementById('inicio').scrollIntoView();
+      }
+    });
+
+    // ── WhatsApp Float + Modal (números individuais) ──
+    const waToggle = document.getElementById('whatsapp-toggle');
+    const waModal = document.getElementById('whatsapp-modal');
+
+    waToggle.addEventListener('click', () => {
+      const isOpen = waModal.classList.toggle('open');
+      waToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    waModal.querySelectorAll('.wa-msg').forEach(btnMsg => {
+      btnMsg.addEventListener('click', () => {
+        const number = btnMsg.getAttribute('data-wa-number') || '5511983546780';
+        const msg = encodeURIComponent(btnMsg.getAttribute('data-wa-msg'));
+        window.open(`https://wa.me/${number}?text=${msg}`, '_blank', 'noopener,noreferrer');
+        waModal.classList.remove('open');
+        waToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!document.getElementById('whatsapp-float').contains(e.target)) {
+        waModal.classList.remove('open');
+        waToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && waModal.classList.contains('open')) {
+        waModal.classList.remove('open');
+        waToggle.setAttribute('aria-expanded', 'false');
+        waToggle.focus();
+      }
+    });
+
+    // ── CARROSSEL ──
+    const carousel = document.getElementById('carousel-sobre');
+    const track = carousel.querySelector('.carousel-track');
+    const slides = Array.from(track.children);
+    const prevButton = carousel.querySelector('.prev');
+    const nextButton = carousel.querySelector('.next');
+    const dotsContainer = carousel.querySelector('.carousel-dots');
+
+    let currentSlide = 0;
+    let autoplayInterval;
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.classList.add('carousel-dot');
+      dot.setAttribute('aria-label', `Ir para imagem ${index + 1}`);
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+    const dots = Array.from(dotsContainer.children);
+
+    function updateSlide(index) {
+      track.style.transform = `translateX(-${index * 100}%)`;
+      dots.forEach(d => d.classList.remove('active'));
+      dots[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    function goToSlide(index) {
+      updateSlide(index);
+      resetAutoplay();
+    }
+
+    function nextSlide() {
+      const newIndex = (currentSlide + 1) % slides.length;
+      updateSlide(newIndex);
+    }
+
+    function prevSlide() {
+      const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+      updateSlide(newIndex);
+    }
+
+    function startAutoplay() {
+      autoplayInterval = setInterval(nextSlide, 4000);
+    }
+
+    function resetAutoplay() {
+      clearInterval(autoplayInterval);
+      startAutoplay();
+    }
+
+    prevButton.addEventListener('click', prevSlide);
+    nextButton.addEventListener('click', nextSlide);
+    carousel.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    carousel.addEventListener('mouseleave', startAutoplay);
+    startAutoplay();
+  </script>
+</body>
+</html>
